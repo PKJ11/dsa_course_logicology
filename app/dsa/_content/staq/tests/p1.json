@@ -1,0 +1,12 @@
+[
+  {"name": "Nested", "args": "('{[()()]}',)", "expect": "True", "show": "balanced('{[()()]}')", "why": "Every bracket closes the most recent one still open."},
+  {"name": "Crossed", "args": "('([)]',)", "expect": "False", "show": "balanced('([)]')", "why": "One of each kind, but the ) arrives while [ is the most recent open bracket. Counting each kind is not enough; check the top of a stack."},
+  {"name": "Empty text", "args": "('',)", "expect": "True", "show": "balanced('')", "why": "Nothing is open, so the empty text is balanced: True."},
+  {"name": "Never closed", "args": "('((',)", "expect": "False", "show": "balanced('((')", "why": "At the end the stack still holds two open brackets. Return True only if the stack is empty."},
+  {"name": "Close first", "args": "('))((',)", "expect": "False", "show": "balanced('))((')", "why": "The first ) arrives with nothing open. Popping an empty list raises IndexError; check that the stack is not empty first."},
+  {"name": "Wrong closer", "args": "('(]',)", "expect": "False", "show": "balanced('(]')", "why": "] does not close (. Check which kind of bracket is on top, not just that something is."},
+  {"name": "Other characters", "args": "('print(a[i] + f(x, {1: 2}))',)", "expect": "True", "show": "balanced('print(a[i] + f(x, {1: 2}))')", "why": "Letters, spaces and other symbols are ignored. Only ( ) [ ] { } count."},
+  {"name": "Only closers", "args": "('}',)", "expect": "False", "show": "balanced('}')", "why": "A closing bracket with nothing open: False."},
+  {"name": "100,000 deep", "args": "('(' * 100_000 + ')' * 100_000,)", "expect": "True", "timeout": 3000, "show": "balanced('((( … )))'), 100,000 deep", "why": "One pass with a stack is O(n). Removing '()' pairs again and again with replace takes about n/2 passes over the text: O(n²), time that grows with n multiplied by n. A recursive solution fails with RecursionError at this depth."},
+  {"name": "Long and almost right", "args": "('[]{}()' * 50_000 + '(',)", "expect": "False", "timeout": 3000, "show": "balanced('[]{}()[]{}() … (') with one ( left open at the end", "why": "Everything matches except the last (, which is never closed. Only the final empty-stack check catches it."}
+]

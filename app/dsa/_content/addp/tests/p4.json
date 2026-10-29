@@ -1,0 +1,13 @@
+[
+  {"name": "No parcels", "args": "([], 10)", "expect": "0", "show": "fewest_wagons([], 10)", "why": "0 wagons."},
+  {"name": "One parcel", "args": "([5], 10)", "expect": "1", "show": "fewest_wagons([5], 10)", "why": "1."},
+  {"name": "All in one wagon", "args": "([2, 3, 4], 10)", "expect": "1", "show": "fewest_wagons([2, 3, 4], 10)", "why": "1: 2 + 3 + 4 = 9 fits."},
+  {"name": "Each on its own", "args": "([6, 6, 6], 10)", "expect": "3", "show": "fewest_wagons([6, 6, 6], 10)", "why": "3: no two fit together."},
+  {"name": "Two wagons", "args": "([2, 3, 3, 5, 6], 10)", "expect": "2", "show": "fewest_wagons([2, 3, 3, 5, 6], 10)", "why": "2: for example 2 + 3 + 5 and 3 + 6."},
+  {"name": "Largest first is not best", "args": "([6, 5, 4, 3, 3, 10, 3], 12)", "expect": "3", "show": "fewest_wagons([6, 5, 4, 3, 3, 10, 3], 12)", "why": "3: 10 alone, 6 + 3 + 3 and 5 + 4 + 3. Placing the largest parcels first, each into the first wagon with room, needs 4."},
+  {"name": "In the given order is not best", "args": "([3, 7, 3, 7], 10)", "expect": "2", "show": "fewest_wagons([3, 7, 3, 7], 10)", "why": "2: 3 + 7 twice. Filling wagons in the given order needs 3."},
+  {"name": "Exactly full", "args": "([5, 5, 5, 5, 5, 5], 10)", "expect": "3", "show": "fewest_wagons([5, 5, 5, 5, 5, 5], 10)", "why": "3: a parcel that fills the wagon exactly still fits."},
+  {"name": "Eleven parcels", "args": "([3, 8, 2, 7, 5, 5, 4, 6, 1, 9, 10], 20)", "expect": "3", "show": "fewest_wagons([3, 8, 2, 7, 5, 5, 4, 6, 1, 9, 10], 20)", "why": "Trying every order of 11 parcels is about 40 million orders: too slow. The state is the set loaded so far."},
+  {"name": "Sixteen parcels", "args": "([(x >> 8) % 70 + 1 for k in range(16) for y in [(k + 80000152) * 6364136223846793005 % 2 ** 64] for x in [(y ^ y >> 29) * 3935559000370003845 % 2 ** 64]], 100)", "expect": "5", "timeout": 4000, "show": "16 random parcels from 1 to 70, wagons of 100", "why": "2¹⁶ sets × 16 parcels is about a million steps. Trying every order (16!, about 2 × 10¹³) or every split into groups by submasks (3¹⁶, about 43 million) is too slow in Python."},
+  {"name": "Sixteen that fill four wagons", "args": "([123, 377, 250, 250, 401, 99, 300, 200, 455, 45, 280, 220, 333, 167, 111, 389], 1000)", "expect": "4", "timeout": 4000, "show": "16 parcels that fill 4 wagons of 1,000 exactly", "why": "4. Each wagon must be filled exactly, which simple rules rarely find."}
+]

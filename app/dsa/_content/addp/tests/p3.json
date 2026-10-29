@@ -1,0 +1,13 @@
+[
+  {"name": "No marks", "args": "(10, [])", "expect": "0", "show": "cheapest_cuts(10, [])", "why": "0: nothing to cut."},
+  {"name": "One mark", "args": "(10, [4])", "expect": "10", "show": "cheapest_cuts(10, [4])", "why": "10: the one cut is made on the whole rail of length 10."},
+  {"name": "Two marks", "args": "(10, [2, 8])", "expect": "18", "show": "cheapest_cuts(10, [2, 8])", "why": "18: either cut first costs 10, and the second cut is on a piece of 8."},
+  {"name": "The order matters", "args": "(7, [1, 3, 4, 5])", "expect": "16", "show": "cheapest_cuts(7, [1, 3, 4, 5])", "why": "16: cut at 3 first (7), then 1 on the piece 0–3 (3), then 5 on 3–7 (4), then 4 on 3–5 (2)."},
+  {"name": "Marks out of order", "args": "(9, [5, 6, 1, 4, 2])", "expect": "22", "show": "cheapest_cuts(9, [5, 6, 1, 4, 2])", "why": "22. Sort the marks first: the stretches are between neighbouring marks."},
+  {"name": "Middle first is not best", "args": "(12, [2, 4, 5, 7])", "expect": "26", "show": "cheapest_cuts(12, [2, 4, 5, 7])", "why": "26. Always cutting the mark nearest the middle of the piece gives 27."},
+  {"name": "Marks near the ends", "args": "(100, [1, 99])", "expect": "199", "show": "cheapest_cuts(100, [1, 99])", "why": "199: whichever goes first costs 100, the second 99."},
+  {"name": "Twelve marks", "args": "(30, [2, 3, 5, 8, 11, 13, 16, 19, 21, 24, 26, 29])", "expect": "112", "show": "cheapest_cuts(30, [2, 3, 5, 8, 11, 13, 16, 19, 21, 24, 26, 29])", "why": "Trying every order of 12 cuts is 479,001,600 orders: far too slow. The table of stretches has 14 × 13 / 2 cells."},
+  {"name": "Twenty marks", "args": "(1000, [37, 74, 150, 151, 152, 300, 333, 401, 450, 500, 512, 600, 640, 700, 777, 800, 850, 900, 950, 999])", "expect": "4191", "show": "cheapest_cuts(1000, [37, 74, 150, 151, 152, 300, 333, 401, 450, 500, 512, 600, 640, 700, 777, 800, 850, 900, 950, 999])", "why": "Recursion without a memo solves the same stretches again and again: about 3²⁰ calls here."},
+  {"name": "150 marks", "args": "(10 ** 9, sorted({(x >> 8) % (10 ** 9 - 1) + 1 for k in range(150) for y in [(k + 70000133) * 6364136223846793005 % 2 ** 64] for x in [(y ^ y >> 29) * 3935559000370003845 % 2 ** 64]}))", "expect": "6877855387", "timeout": 3000, "show": "150 random marks on a rail of length 10⁹", "why": "About 150³/6, half a million split checks: under a second. Memoised recursion is also fine: it is at most 150 calls deep."},
+  {"name": "150 evenly spaced marks", "args": "(151, list(range(1, 151)))", "expect": "1103", "timeout": 3000, "show": "cheapest_cuts(151, [1, 2, ..., 150])", "why": "Many splits tie here; any of them gives the same total."}
+]

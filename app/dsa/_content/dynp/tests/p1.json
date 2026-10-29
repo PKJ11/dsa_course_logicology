@@ -1,0 +1,11 @@
+[
+  {"name": "The example", "args": "(3,)", "expect": "5", "show": "shapes(3)", "why": "5: with root 1, the keys 2 and 3 make 2 shapes on the right; with root 2, one key on each side makes 1; with root 3, 2 shapes on the left. 2 + 1 + 2 = 5."},
+  {"name": "No keys", "args": "(0,)", "expect": "1", "show": "shapes(0)", "why": "1: the empty tree is one shape. This base case makes the sum work: a root with nothing on one side multiplies by shapes(0) = 1."},
+  {"name": "One key", "args": "(1,)", "expect": "1", "show": "shapes(1)", "why": "1: a single node."},
+  {"name": "Two keys", "args": "(2,)", "expect": "2", "show": "shapes(2)", "why": "2: the root is 1 (with 2 on its right) or 2 (with 1 on its left)."},
+  {"name": "Four keys", "args": "(4,)", "expect": "14", "show": "shapes(4)", "why": "14 = 5 + 2 + 2 + 5: for each root, multiply the number of left shapes by the number of right shapes, then add."},
+  {"name": "Ten keys", "args": "(10,)", "expect": "16796", "show": "shapes(10)", "why": "16,796. For each choice of root, multiply the number of shapes for the keys on its left by the number for the keys on its right, and add these up over all roots."},
+  {"name": "25 keys", "args": "(25,)", "expect": "4861946401452", "timeout": 2000, "show": "shapes(25)", "why": "Plain recursion asks for the same smaller counts again and again: about 3²⁵ calls here, which never finishes. There are only 26 different questions (0 to 25 keys). Remember each answer, or fill a list from 0 keys upwards."},
+  {"name": "120 keys", "args": "(120,)", "expect": "751269297881058917464501210451062751843240026086509499359064493663600", "timeout": 3000, "show": "shapes(120)", "why": "A number with 69 digits. Python's whole numbers hold it exactly. The work is about 120²/2 = 7,200 multiplications."},
+  {"name": "200 keys", "args": "(200,)", "expect": "512201493211017079467541693136328292324432464582475861864920694407578768023144072628540276213813397768975366156750120", "timeout": 3000, "show": "shapes(200)", "why": "A number with 117 digits. Memoised recursion is fine at this size: it goes at most 200 calls deep."}
+]

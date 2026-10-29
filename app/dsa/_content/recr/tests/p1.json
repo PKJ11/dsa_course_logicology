@@ -1,0 +1,10 @@
+[
+  {"name": "Small", "args": "(3, 4, 5)", "expect": "1", "show": "power_mod(3, 4, 5)", "why": "3⁴ = 3 × 3 × 3 × 3 = 81, and 81 % 5 = 1. If this fails, check the base case and the odd case."},
+  {"name": "Odd power", "args": "(2, 13, 1000)", "expect": "192", "show": "power_mod(2, 13, 1000)", "why": "2¹³ (13 twos multiplied together) = 8192, so the answer is 192. An odd n needs one extra factor of x: half × half × x, where half is x to the power n // 2. If you got 96 or 384, that extra x is missing or doubled."},
+  {"name": "Power 0", "args": "(7, 0, 13)", "expect": "1", "show": "power_mod(7, 0, 13)", "why": "Anything to the power 0 is 1, and 1 % 13 = 1."},
+  {"name": "Modulus 1", "args": "(7, 0, 1)", "expect": "0", "show": "power_mod(7, 0, 1)", "why": "Every number % 1 is 0, even 7⁰ = 1 (any number to the power 0 is 1). If you got 1, the base case returns 1 without taking % m. Return 1 % m."},
+  {"name": "x bigger than m", "args": "(123_456_789, 5, 1_000)", "expect": "949", "show": "power_mod(123456789, 5, 1000)", "why": "Take x % m first, so the numbers you multiply stay below m. The answer is 789⁵ % 1000 = 949, where 789⁵ is five copies of 789 multiplied together."},
+  {"name": "x is 0", "args": "(0, 10, 7)", "expect": "0", "show": "power_mod(0, 10, 7)", "why": "0 to any power above 0 is 0. If you got 1, the code returns 1 too early, for example when x is 0 or when the half is 0. Only n == 0 should give 1 % m."},
+  {"name": "n = 10⁹", "args": "(2, 10 ** 9, 1_000_000_007)", "expect": "140625001", "timeout": 2000, "show": "power_mod(2, 10**9, 1000000007)", "why": "Multiplying n times is a billion steps. Halve n at each call instead: about 30 calls. If this timed out, the code may call itself twice, power(x, n // 2) * power(x, n // 2), which brings back n calls. Store the half in a name."},
+  {"name": "n = 10¹⁸", "args": "(987_654_321, 10 ** 18, 999_999_937)", "expect": "169911343", "timeout": 2000, "show": "power_mod(987654321, 10**18, 999999937)", "why": "About 60 halvings. Take % m after every multiplication, or the numbers grow to millions of digits. x ** n % m would compute the huge power first."}
+]

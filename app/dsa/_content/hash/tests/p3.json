@@ -1,0 +1,11 @@
+[
+  {"name": "Classic", "args": "([100, 4, 200, 1, 3, 2],)", "expect": "4", "show": "[100, 4, 200, 1, 3, 2]", "why": "1, 2, 3, 4 is a run of 4. The order in the list does not matter."},
+  {"name": "Empty", "args": "([],)", "expect": "0", "show": "[]", "why": "No numbers, no run: 0. max() of an empty sequence raises ValueError; give it a default."},
+  {"name": "One number", "args": "([7],)", "expect": "1", "show": "[7]", "why": "A single number is a run of 1."},
+  {"name": "Repeats", "args": "([1, 2, 2, 3, 3, 3],)", "expect": "3", "show": "[1, 2, 2, 3, 3, 3]", "why": "Repeats do not make a run longer: 1, 2, 3 is 3. A set removes the repeats."},
+  {"name": "Negative numbers", "args": "([-2, -1, 0, 5, 6],)", "expect": "3", "show": "[-2, -1, 0, 5, 6]", "why": "-2, -1, 0 is a run of 3."},
+  {"name": "Two runs", "args": "([9, 1, 4, 7, 3, -1, 0, 5, 8, -1, 6],)", "expect": "7", "show": "[9, 1, 4, 7, 3, -1, 0, 5, 8, -1, 6]", "why": "-1, 0, 1 is 3 long; 3 to 9 is 7 long. The answer is 7."},
+  {"name": "No two in a row", "args": "([10, 20, 30],)", "expect": "1", "show": "[10, 20, 30]", "why": "Every run is 1 long."},
+  {"name": "200,000 in one run", "args": "(list(range(200_000, 0, -1)),)", "expect": "200000", "timeout": 3000, "show": "200,000 down to 1", "why": "Count up only from a number x where x − 1 is not in the set: the start of a run. If you count up from every number, a run of 200,000 costs about 20 billion steps (O(n²))."},
+  {"name": "200,000 scattered", "args": "([(k * 7919) % 400_009 for k in range(200_000)],)", "expect": "2", "timeout": 3000, "show": "200,000 scattered numbers below 400,009", "why": "With a set, each 'in' check is O(1) on average, so the whole job is O(n). sorted() is switched off, so sorting is not available."}
+]

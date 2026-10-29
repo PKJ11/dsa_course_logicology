@@ -1,0 +1,11 @@
+[
+  {"name": "The example", "args": "(12,)", "expect": "13", "show": "exchange(12)", "why": "13: exchange 12 for 6, 4 and 3, then sell all three, because none of them is worth exchanging. 6 + 4 + 3 = 13 is more than 12."},
+  {"name": "Zero", "args": "(0,)", "expect": "0", "show": "exchange(0)", "why": "0: a coin with 0 on it is worth nothing."},
+  {"name": "Selling is better", "args": "(11,)", "expect": "11", "show": "exchange(11)", "why": "11: exchanging gives 5 + 3 + 2 = 10, so sell the coin."},
+  {"name": "Twice", "args": "(24,)", "expect": "27", "show": "exchange(24)", "why": "27: 24 becomes 12, 8 and 6. Exchange the 12 again (13 rupees) and sell 8 and 6: 13 + 8 + 6 = 27."},
+  {"name": "Every n below 40", "args": "()", "expect": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 13, 14, 15, 17, 17, 19, 19, 21, 22, 23, 23, 27, 27, 27, 28, 30, 30, 32, 32, 35, 36, 36, 36, 41, 41, 41, 41]", "expr": "[exchange(n) for n in range(40)]", "show": "[exchange(n) for n in range(40)]", "why": "Every small case, one after another. If your memo is a global dict, it must still give the right answers when the function is called many times."},
+  {"name": "One million", "args": "(1_000_000,)", "expect": "2566393", "show": "exchange(1_000_000)", "why": "2,566,393. Plain recursion asks for the same amounts again and again and makes millions of calls here; a memo works out each amount once, a few hundred amounts in all."},
+  {"name": "One billion", "args": "(1_000_000_000,)", "expect": "4243218150", "timeout": 2000, "show": "exchange(1_000_000_000)", "why": "Plain recursion makes billions of calls here. With a memo, only a few hundred different values are ever reached (n divided by products of 2, 3 and 4), so it is instant."},
+  {"name": "10¹²", "args": "(10 ** 12,)", "expect": "7828351122081", "timeout": 2000, "show": "exchange(10 ** 12)", "why": "A table with one entry for every amount up to n would need a million million entries. Memoisation stores only the values the recursion reaches: this is where top-down beats a table."},
+  {"name": "10¹⁸", "args": "(10 ** 18,)", "expect": "24052065275090543859", "timeout": 2000, "show": "exchange(10 ** 18)", "why": "Still only a few thousand different values, and about 60 calls deep (each call at least halves n)."}
+]

@@ -1,0 +1,11 @@
+[
+  {"name": "Six numbers", "args": "([3, 10, 5, 25, 2, 8],)", "expect": "28", "show": "max_xor([3, 10, 5, 25, 2, 8])", "why": "5 ^ 25 = 00101 ^ 11001 = 11100 = 28."},
+  {"name": "The lesson's numbers", "args": "([3, 10, 5, 9, 6],)", "expect": "15", "show": "max_xor([3, 10, 5, 9, 6])", "why": "5 ^ 10 = 0101 ^ 1010 = 1111 = 15."},
+  {"name": "Two numbers", "args": "([1, 2],)", "expect": "3", "show": "max_xor([1, 2])", "why": "With two numbers, the answer is their XOR: 01 ^ 10 = 11 = 3."},
+  {"name": "All the same", "args": "([7, 7, 7],)", "expect": "0", "show": "max_xor([7, 7, 7])", "why": "x ^ x = 0 for every pair."},
+  {"name": "Zeros", "args": "([0, 0],)", "expect": "0", "show": "max_xor([0, 0])", "why": "0. Watch out for max(nums).bit_length() being 0: the walk then has no bits at all, which is fine."},
+  {"name": "Large values", "args": "([2**30 - 1, 0, 12345, 2**29],)", "expect": "1073741823", "show": "max_xor([2**30 - 1, 0, 12345, 2**29])", "why": "(2³⁰ − 1) ^ 0 = 1,073,741,823. All 30 bits matter: if you used fewer bits, the top ones were lost."},
+  {"name": "Powers of two", "args": "([1, 2, 4, 8, 16, 32, 64],)", "expect": "96", "show": "max_xor([1, 2, 4, 8, 16, 32, 64])", "why": "64 ^ 32 = 96. No two powers share a bit."},
+  {"name": "The opposite bit is missing", "args": "([8, 9, 10, 11],)", "expect": "3", "show": "max_xor([8, 9, 10, 11])", "why": "All four start with bit 8, so the top result bit is 0 for every pair. The best is 8 ^ 11 = 1000 ^ 1011 = 0011 = 3, or 9 ^ 10."},
+  {"name": "20,000 numbers", "args": "([(k * 2654435761) % (2**30) for k in range(1, 20001)],)", "expect": "1073726979", "timeout": 4000, "show": "max_xor of 20,000 numbers below 2³⁰", "why": "Comparing every pair is 200 million XORs. A trie of bits needs about 20,000 × 60 steps."}
+]

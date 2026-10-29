@@ -1,0 +1,11 @@
+[
+  {"name": "Merge sort: 2, 2, 1", "args": "(2, 2, 1)", "expect": "(1, 1)", "show": "master(2, 2, 1)", "why": "a = 2 and bᵈ (d copies of b multiplied together) = 2¹ = 2, so every level does the same work: n log n, which is (1, 1). If you got (1, 0), the equal case is missing its log."},
+  {"name": "Binary search: 1, 2, 0", "args": "(1, 2, 0)", "expect": "(0, 1)", "show": "master(1, 2, 0)", "why": "a = 1 and bᵈ = 2⁰ = 1: equal, so Θ(n⁰ log n) = Θ(log n), which is (0, 1). Check that the code handles d = 0."},
+  {"name": "Leaves decide: 4, 2, 1", "args": "(4, 2, 1)", "expect": "(2.0, 0)", "show": "master(4, 2, 1)", "why": "a = 4 is more than bᵈ = 2, so the bottom level decides: p = log₂ 4 = 2. If you got (1, 0), the cases are the wrong way round: when a is more than bᵈ, the leaves decide."},
+  {"name": "Karatsuba: 3, 2, 1", "args": "(3, 2, 1)", "expect": "(1.585, 0)", "show": "master(3, 2, 1)", "why": "a = 3 is more than 2, so p = log₂ 3, about 1.585. Use math.log(a, b) and round it to 3 decimal places with round(p, 3)."},
+  {"name": "Top level decides: 2, 2, 2", "args": "(2, 2, 2)", "expect": "(2, 0)", "show": "master(2, 2, 2)", "why": "a = 2 is less than bᵈ = 4, so the top level decides: Θ(n²), which is (2, 0). If you got (1, 1) or (2, 1), the code treats this as the equal case: compare a with b ** d."},
+  {"name": "Top level decides: 1, 2, 1", "args": "(1, 2, 1)", "expect": "(1, 0)", "show": "master(1, 2, 1)", "why": "One half-size call plus n work: n + n/2 + n/4 + … stays below 2n, so Θ(n), which is (1, 0)."},
+  {"name": "Base 3: 9, 3, 2", "args": "(9, 3, 2)", "expect": "(2, 1)", "show": "master(9, 3, 2)", "why": "3² = 9, so this is the equal case: (2, 1). Compare a with b ** d using whole numbers. Comparing log values as floats can be off by a tiny amount."},
+  {"name": "Base 5: 125, 5, 3", "args": "(125, 5, 3)", "expect": "(3, 1)", "show": "master(125, 5, 3)", "why": "5³ = 125, so this is the equal case: (3, 1). In floating point, math.log(125, 5) is 3.0000000000000004, which is not equal to 3. Compare a with b ** d as whole numbers instead."},
+  {"name": "Odd one: 7, 2, 2", "args": "(7, 2, 2)", "expect": "(2.807, 0)", "show": "master(7, 2, 2)", "why": "7 is more than 4, so p = log₂ 7, about 2.807. This is Strassen's matrix method from the DVCQ station."}
+]

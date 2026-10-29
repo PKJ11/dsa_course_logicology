@@ -1,0 +1,10 @@
+[
+  {"name": "Small", "args": "([1, 1, 1], 2)", "expect": "2", "show": "a = [1, 1, 1], k = 2", "why": "Places 0–1 and 1–2: 2 stretches."},
+  {"name": "Different lengths", "args": "([1, 2, 3], 3)", "expect": "2", "show": "a = [1, 2, 3], k = 3", "why": "[1, 2] and [3]: 2 stretches."},
+  {"name": "Negative values", "args": "([1, -1, 0], 0)", "expect": "3", "show": "a = [1, -1, 0], k = 0", "why": "[1, -1], [0] and [1, -1, 0]: 3. A sliding window (grow the right end, shrink the left end) does not work with negative values: a sum can go down as the window grows."},
+  {"name": "Zeros", "args": "([0, 0, 0], 0)", "expect": "6", "show": "a = [0, 0, 0], k = 0", "why": "Every stretch adds up to 0: 3 + 2 + 1 = 6. Start the dict with {0: 1} (the empty start, before place 0), and count before you store the current prefix sum."},
+  {"name": "Empty", "args": "([], 5)", "expect": "0", "show": "a = [], k = 5", "why": "No stretches: 0."},
+  {"name": "Mixed", "args": "([3, 4, 7, 2, -3, 1, 4, 2], 7)", "expect": "4", "show": "a = [3, 4, 7, 2, -3, 1, 4, 2], k = 7", "why": "[3, 4], [7], [7, 2, -3, 1] and [1, 4, 2]: 4."},
+  {"name": "Whole list only", "args": "([5, -5, 5], 5)", "expect": "3", "show": "a = [5, -5, 5], k = 5", "why": "[5], [5] and [5, -5, 5]: 3."},
+  {"name": "200,000 values", "args": "([(k * 2654435761 >> 9) % 7 - 3 for k in range(200_000)], 5)", "expect": "454180587", "timeout": 3000, "show": "200,000 values from -3 to 3; k = 5", "why": "Trying every stretch is O(n²): about 20 billion sums. With prefix sums and a dict of how often each sum has appeared, it is one pass, O(n)."}
+]

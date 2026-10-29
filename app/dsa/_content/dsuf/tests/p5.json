@@ -1,0 +1,11 @@
+[
+  {"name": "The example", "args": "(['a==b', 'b==c', 'a!=c'],)", "expect": "False", "show": "consistent(['a==b', 'b==c', 'a!=c'])", "why": "False: a equals b and b equals c, so a equals c."},
+  {"name": "Can all hold", "args": "(['a==b', 'c!=a', 'c==d'],)", "expect": "True", "show": "consistent(['a==b', 'c!=a', 'c==d'])", "why": "True: {a, b} and {c, d} are two groups, and a is not equal to c."},
+  {"name": "Order of the facts", "args": "(['a!=b', 'b==c', 'c==a'],)", "expect": "False", "show": "consistent(['a!=b', 'b==c', 'c==a'])", "why": "False. The != fact comes first, but the == facts after it still join a and b. Process all the == facts first, then check every != fact."},
+  {"name": "Not equal to itself", "args": "(['x!=x'],)", "expect": "False", "show": "consistent(['x!=x'])", "why": "False: nothing can be different from itself."},
+  {"name": "Equal to itself", "args": "(['x==x', 'y!=x'],)", "expect": "True", "show": "consistent(['x==x', 'y!=x'])", "why": "True."},
+  {"name": "Longer names", "args": "(['delhi==dilli', 'mumbai==bombay', 'chennai==madras', 'bombay!=madras', 'dilli!=delhi'],)", "expect": "False", "show": "consistent(['delhi==dilli', 'mumbai==bombay', 'chennai==madras', 'bombay!=madras', 'dilli!=delhi'])", "why": "False: dilli and delhi were made equal. Names are whole words: split each fact at '==' or '!='."},
+  {"name": "No facts", "args": "([],)", "expect": "True", "show": "consistent([])", "why": "True."},
+  {"name": "A long chain, all fine", "args": "([f'v{k}==v{k + 1}' for k in range(100_000)] + [f'v0!=w{k}' for k in range(100_000)],)", "expect": "True", "timeout": 4000, "show": "100,000 facts v0 == v1, v1 == v2, …, then 100,000 facts v0 != w0, v0 != w1, …", "why": "True. The chain v0 … v100000 is one group. Without union by size or path compression, it is one long path, and each of the 100,000 checks of v0 goes up all of it. A recursive find stops with RecursionError."},
+  {"name": "A long chain, one clash", "args": "([f'v{k}==v{k + 1}' for k in range(100_000)] + [f'v{k}!=w{k}' for k in range(50_000)] + ['v100000!=v0'],)", "expect": "False", "timeout": 4000, "show": "the same chain, 50,000 harmless != facts, then v100000 != v0", "why": "False: the two ends of the chain are equal."}
+]

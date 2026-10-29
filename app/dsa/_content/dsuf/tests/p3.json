@@ -1,0 +1,11 @@
+[
+  {"name": "The example", "args": "(4, [(0, 1), (1, 2), (2, 0), (2, 3)])", "expect": "2", "show": "first_cycle(4, [(0, 1), (1, 2), (2, 0), (2, 3)])", "why": "2: when road 2 (from 2 to 0) arrives, 2 and 0 are already connected through 1."},
+  {"name": "No cycle", "args": "(4, [(0, 1), (1, 2), (2, 3)])", "expect": "-1", "show": "first_cycle(4, [(0, 1), (1, 2), (2, 3)])", "why": "-1: every road joins two separate groups."},
+  {"name": "A road to itself", "args": "(3, [(0, 1), (2, 2), (1, 2)])", "expect": "1", "show": "first_cycle(3, [(0, 1), (2, 2), (1, 2)])", "why": "1: a road from a place to itself is a loop at once."},
+  {"name": "The same road twice", "args": "(3, [(0, 1), (1, 0)])", "expect": "1", "show": "first_cycle(3, [(0, 1), (1, 0)])", "why": "1: a second road between the same two places closes a loop."},
+  {"name": "Lesson 5's roads", "args": "(6, [(0, 1), (1, 2), (3, 4), (0, 2), (4, 5), (2, 3), (5, 3)])", "expect": "3", "show": "first_cycle(6, the roads of the lesson's figure)", "why": "3: road 0–2 is the first to join two places already connected. Return the first, not the last."},
+  {"name": "Separate groups", "args": "(6, [(0, 1), (2, 3), (4, 5), (1, 3), (5, 2), (0, 4)])", "expect": "5", "show": "first_cycle(6, [(0, 1), (2, 3), (4, 5), (1, 3), (5, 2), (0, 4)])", "why": "5: after road 4 all six places are one group, so road 0–4 closes a loop."},
+  {"name": "No roads", "args": "(5, [])", "expect": "-1", "show": "first_cycle(5, [])", "why": "-1."},
+  {"name": "200,000 places", "args": "(200_000, [((k * 7919 + 13) % k, k) for k in range(1, 200_000)] + [(123_456, 98_765)])", "expect": "199999", "timeout": 4000, "show": "200,000 places; 199,999 roads that join a new place to an older one, then one more road", "why": "Only the last road closes a cycle. Searching the roads seen so far for a path before adding each road costs O(n) per road."},
+  {"name": "A long chain", "args": "(150_000, [(k, k + 1) for k in range(149_999)] + [(0, 149_999)])", "expect": "149999", "timeout": 4000, "show": "150,000 places in a chain, then a road from the first to the last", "why": "Without union by size or path compression, the chain becomes one long path that every find goes up."}
+]

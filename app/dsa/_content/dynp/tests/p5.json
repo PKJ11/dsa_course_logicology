@@ -1,0 +1,11 @@
+[
+  {"name": "The example", "args": "(['#..#.', '.....', '.#...', '.#...'],)", "expect": "3", "show": "largest_square(['#..#.', '.....', '.#...', '.#...'])", "why": "3: rows 1 to 3, columns 2 to 4 (counting from 0). No 4 × 4 square is free."},
+  {"name": "All track", "args": "(['##', '##'],)", "expect": "0", "show": "largest_square(['##', '##'])", "why": "0: no free cell at all."},
+  {"name": "One free cell", "args": "(['###', '#.#', '###'],)", "expect": "1", "show": "largest_square(['###', '#.#', '###'])", "why": "1: the single free cell in the middle is a square of side 1."},
+  {"name": "No rows", "args": "([],)", "expect": "0", "show": "largest_square([])", "why": "0: an empty yard."},
+  {"name": "One row", "args": "(['..#...'],)", "expect": "1", "show": "largest_square(['..#...'])", "why": "1: a row of free cells is not a square. Only 1 × 1 fits in one row."},
+  {"name": "A long strip is not a square", "args": "(['......', '......', '#.#.#.'],)", "expect": "2", "show": "largest_square(['......', '......', '#.#.#.'])", "why": "2: the free area 6 wide and 2 tall holds a 2 × 2 square, not more. Count squares, not rectangles."},
+  {"name": "In the bottom-right corner", "args": "(['#....', '#.#..', '##...', '#....', '.#...'],)", "expect": "3", "show": "largest_square(['#....', '#.#..', '##...', '#....', '.#...'])", "why": "3: rows 2 to 4, columns 2 to 4. A cell's square reaches up and to the left, so the biggest one ends in the bottom-right part of the grid."},
+  {"name": "700 × 700, all free", "args": "(['.' * 700] * 700,)", "expect": "700", "timeout": 4000, "show": "largest_square(700 rows of 700 free cells)", "why": "700. Growing a square from every cell and checking it costs about n³ = 343 million steps here. The table needs one step per cell: 490,000."},
+  {"name": "700 × 700 yard", "args": "([\"\".join(\"#\" if (r * 31 + c * 17 + r * c) % 23 == 0 or (r // 70 + c // 90) % 5 == 0 and (r + c) % 4 == 0 else \".\" for c in range(700)) for r in range(700)],)", "expect": "7", "timeout": 4000, "show": "largest_square(a 700 × 700 yard with scattered track)", "why": "One pass over the cells with the rule 1 + the smallest of the three neighbours above, to the left and above-left."}
+]

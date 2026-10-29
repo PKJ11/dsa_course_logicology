@@ -1,0 +1,9 @@
+[
+  {"name": "n = 0", "args": "(0,)", "expect": "0", "show": "count_steps(0)", "why": "No loop runs, so work(0) returns 0. Check that your formula gives 0 here."},
+  {"name": "n = 1", "args": "(1,)", "expect": "3", "show": "count_steps(1)", "why": "The first part runs once (adding 1) and the second part once (adding 2): 3. If you got 2 or 4, check where the inner loop starts: j starts at i, not at i + 1."},
+  {"name": "n = 3", "args": "(3,)", "expect": "12", "show": "count_steps(3)", "why": "First part: the inner loop runs 3, 2, 1 times, which is 6. Second part: 3 passes adding 2 each, which is 6. Total 12. If you got 9, you counted the inner loop as n(n - 1)/2: j starts at i, so it is n(n + 1)/2."},
+  {"name": "n = 10", "args": "(10,)", "expect": "75", "show": "count_steps(10)", "why": "55 + 20 = 75. If you got 70 or 65, the second loop adds 2 each pass, not 1."},
+  {"name": "Whole-number answer", "args": "(7,)", "expect": "'int'", "expr": "type(count_steps(args[0])).__name__", "show": "the type of count_steps(7)", "why": "The answer must be an int. n * (n + 1) / 2 gives a float such as 28.0. Use // for whole-number division: n * (n + 1) is always even, so nothing is lost."},
+  {"name": "n = 1,000,000", "args": "(1_000_000,)", "expect": "500002500000", "timeout": 2000, "show": "count_steps(1000000)", "why": "Running the loops takes about 500 billion steps. Work out the count with a formula instead: 1 + 2 + … + n = n(n + 1)/2, plus 2n for the second loop."},
+  {"name": "n = 10¹⁸", "args": "(10 ** 18,)", "expect": "500000000000000002500000000000000000", "timeout": 2000, "show": "count_steps(10**18)", "why": "A float cannot hold this answer exactly, so n * (n + 1) / 2 is wrong in the last digits. Python ints have no size limit: use n * (n + 1) // 2."}
+]

@@ -1,0 +1,8 @@
+[
+  {"name": "4 by 4", "args": "(4,)", "expect": "2", "show": "n_queens(4)", "why": "Two solutions, mirror images of each other. If you got 0, check the diagonal test: r - c and r + c."},
+  {"name": "1 by 1", "args": "(1,)", "expect": "1", "show": "n_queens(1)", "why": "One queen on one square: 1 solution."},
+  {"name": "2 and 3", "args": "()", "expect": "[0, 0]", "expr": "[n_queens(2), n_queens(3)]", "show": "n_queens(2) and n_queens(3)", "why": "No solutions. If you got more than 0, a clash is missed: queens in neighbouring rows can be on the same diagonal."},
+  {"name": "6 by 6", "args": "(6,)", "expect": "4", "show": "n_queens(6)", "why": "4 solutions. If you got more, a set entry was not removed when backtracking."},
+  {"name": "8 by 8", "args": "(8,)", "expect": "92", "timeout": 4000, "show": "n_queens(8)", "why": "92. Trying all 8⁸ = 16.7 million boards (8 copies of 8 multiplied together) and checking each one is too slow. Place one queen per row, and skip a column as soon as it clashes."},
+  {"name": "10 by 10", "args": "(10,)", "expect": "724", "timeout": 6000, "show": "n_queens(10)", "why": "724. About 35,000 calls with pruning. If this timed out, the clash check may loop over all placed queens; three sets make it O(1)."}
+]

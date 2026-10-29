@@ -1,0 +1,14 @@
+[
+  {"name": "The example", "args": "(5,)", "expect": "7", "show": "ones_upto(5)", "why": "7. 0, 1, 10, 11, 100, 101 have 0 + 1 + 1 + 2 + 1 + 2 = 7 ones."},
+  {"name": "Zero", "args": "(0,)", "expect": "0", "show": "ones_upto(0)", "why": "0: the number 0 has no 1 bits."},
+  {"name": "One", "args": "(1,)", "expect": "1", "show": "ones_upto(1)", "why": "1."},
+  {"name": "Up to 7", "args": "(7,)", "expect": "12", "show": "ones_upto(7)", "why": "12. 0 to 7 are all eight 3-bit patterns. Each place is 1 in exactly half of them: 3 places × 4 = 12."},
+  {"name": "Up to 8", "args": "(8,)", "expect": "13", "show": "ones_upto(8)", "why": "13: 12 for 0 to 7, plus one 1 in 1000."},
+  {"name": "Every n below 40", "args": "()", "expect": "[0, 1, 2, 4, 5, 7, 9, 12, 13, 15, 17, 20, 22, 25, 28, 32, 33, 35, 37, 40, 42, 45, 48, 52, 54, 57, 60, 64, 67, 71, 75, 80, 81, 83, 85, 88, 90, 93, 96, 100]", "expr": "[ones_upto(n) for n in range(40)]", "show": "[ones_upto(n) for n in range(40)]", "why": "Every small case. If some fail, check the part cycle at the end: place k is 1 for the last ((n + 1) % 2ᵏ⁺¹) − 2ᵏ numbers, if that is more than 0."},
+  {"name": "A thousand", "args": "(1000,)", "expect": "4938", "show": "ones_upto(1000)", "why": "4,938 ones in the binary forms of 0 to 1000. Counting each number's bits still works here; the big tests need the count place by place (lesson 4)."},
+  {"name": "A million", "args": "(10 ** 6,)", "expect": "9884999", "show": "ones_upto(10 ** 6)", "why": "Counting the bits of every number one by one still finishes at this size. The next test is a thousand times bigger."},
+  {"name": "A billion", "args": "(10 ** 9,)", "expect": "14846928141", "timeout": 2000, "show": "ones_upto(10 ** 9)", "why": "Counting the 1s of every number means a billion numbers, far too slow. Count place by place instead: about 30 places, each counted with one formula."},
+  {"name": "All 60-bit numbers", "args": "(2 ** 60 - 1,)", "expect": "34587645138205409280", "timeout": 2000, "show": "ones_upto(2 ** 60 - 1)", "why": "60 × 2⁵⁹: there are 2⁶⁰ numbers, and each of the 60 places is 1 in exactly half of them."},
+  {"name": "10¹⁸", "args": "(10 ** 18,)", "expect": "29761222783429247000", "timeout": 2000, "show": "ones_upto(10 ** 18)", "why": "About 60 places to count. Python's whole numbers hold the answer exactly."},
+  {"name": "10¹⁰⁰", "args": "(10 ** 100,)", "expect": "1659284434079132330562258612451464699716746902218798693059840204138953883802656181040646129620038451305", "timeout": 2000, "show": "ones_upto(10 ** 100)", "why": "333 places. The method is O(log n): one step per bit of n."}
+]

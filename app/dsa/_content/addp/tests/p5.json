@@ -1,0 +1,15 @@
+[
+  {"name": "One to nine", "args": "(1, 9)", "expect": "9", "show": "count_no_repeat(1, 9)", "why": "9: one digit cannot repeat."},
+  {"name": "Zero", "args": "(0, 0)", "expect": "1", "show": "count_no_repeat(0, 0)", "why": "1: the number 0 has the single digit 0."},
+  {"name": "Up to 100", "args": "(0, 100)", "expect": "91", "show": "count_no_repeat(0, 100)", "why": "91: 0 to 9 (10), then 10 to 99 without 11, 22, …, 99 (81). 100 has two zeros side by side."},
+  {"name": "From 10 to 20", "args": "(10, 20)", "expect": "10", "show": "count_no_repeat(10, 20)", "why": "10: every number but 11."},
+  {"name": "A single bad number", "args": "(1223, 1223)", "expect": "0", "show": "count_no_repeat(1223, 1223)", "why": "0: the 2s are neighbours."},
+  {"name": "A single good number", "args": "(1213, 1213)", "expect": "1", "show": "count_no_repeat(1213, 1213)", "why": "1."},
+  {"name": "Leading zeros are not digits", "args": "(1, 1000)", "expect": "819", "show": "count_no_repeat(1, 1000)", "why": "819. Written as 0007, the number 7 would seem to repeat its zeros. Zeros in front of a number are not digits of it."},
+  {"name": "Counting from a", "args": "(123, 456)", "expect": "274", "show": "count_no_repeat(123, 456)", "why": "Count up to b, minus the count up to a − 1. Taking away the count up to a loses 123 itself."},
+  {"name": "Up to 10¹⁸", "args": "(0, 1000000000000000000)", "expect": "168856464709124011", "show": "count_no_repeat(0, 1000000000000000000)", "why": "Counting one by one is impossible. The answer is 1 (for 0) plus 9 + 9² + … + 9¹⁸: a k-digit number has 9 choices for each place."},
+  {"name": "A big range", "args": "(123456789012345678, 987654321098765432)", "expect": "147488826146680544", "show": "count_no_repeat(123456789012345678, 987654321098765432)", "why": "A digit DP works on the 18 places of each end."},
+  {"name": "A tight path that breaks early", "args": "(1100000000, 1199999999)", "expect": "0", "show": "count_no_repeat(1100000000, 1199999999)", "why": "0: every number here starts with 11."},
+  {"name": "From ten nines to 10¹¹", "args": "(9999999999, 100000000000)", "expect": "31381059609", "show": "count_no_repeat(9999999999, 100000000000)", "why": "9¹¹ = 31,381,059,609: both ends repeat a digit, and every number between has 11 digits."},
+  {"name": "Many ranges", "args": "()", "expect": "[10, 1, 1, 0, 3, 597870, 0, 0]", "expr": "[count_no_repeat(a, b) for a, b in [(0, 9), (5, 5), (10, 10), (11, 11), (98, 102), (1, 10 ** 6), (999, 1001), (10 ** 17, 10 ** 17 + 50)]]", "show": "count_no_repeat(a, b) for (0, 9), (5, 5), (10, 10), (11, 11), (98, 102), (1, 10⁶), (999, 1001), (10¹⁷, 10¹⁷ + 50)", "why": "Small ranges at the edges: single numbers, a range that crosses 100, and a range that starts at a power of 10."}
+]

@@ -1,0 +1,13 @@
+[
+  {"name": "Zero", "args": "(0,)", "expect": "0", "show": "n = 0", "why": "This is the smallest input. If your search starts at lo = 1, it can never return 0."},
+  {"name": "One", "args": "(1,)", "expect": "1", "show": "n = 1", "why": "If you start hi at n // 2 to save a step, hi is 0 here, and the answer 1 is outside the window. Starting with hi = n works for every n."},
+  {"name": "Two", "args": "(2,)", "expect": "1", "show": "n = 2", "why": "√2 is about 1.41, so the answer is 1. If you got 2, you returned the first r with r * r >= n, instead of the last r with r * r <= n."},
+  {"name": "Just below a square", "args": "(15,)", "expect": "3", "show": "n = 15", "why": "4 * 4 = 16 is too big, so the answer is 3. Returning 4 means you found the first T instead of the last T."},
+  {"name": "A perfect square", "args": "(16,)", "expect": "4", "show": "n = 16", "why": "The answer is exactly 4. If you got 3, your test is r * r < n, but it should be r * r <= n."},
+  {"name": "Just above a square", "args": "(17,)", "expect": "4", "show": "n = 17", "why": "√17 is about 4.12, so the answer is 4. If you got 5, the search kept a value whose square is too big."},
+  {"name": "A trillion", "args": "(10**12,)", "expect": "1000000", "show": "n = 10**12", "why": "This is a large perfect square. If this test runs out of time, either the loop steps one value at a time instead of halving, or it gets stuck when two values are left. Lesson 6 explains how to round mid up."},
+  {"name": "Floats get this one wrong", "args": "(10**30 - 1,)", "expect": "999999999999999", "show": "n = 10**30 - 1", "why": "`int(n ** 0.5)` and `math.sqrt(n)` turn n into a float, which stores only about 16 significant digits. So n becomes exactly 10**30, and the answer is one too big. Use whole numbers only: compare r * r <= n."},
+  {"name": "A 41-digit number", "args": "(10**40 + 12345,)", "expect": "100000000000000000000", "show": "n = 10**40 + 12345", "why": "Python integers have no size limit, so a binary search on [0, n] needs only about 133 halvings. If this fails, a float may be used somewhere in your code. Use // for division, not /."},
+  {"name": "Just past 2**53", "args": "((2**53 + 1) ** 2,)", "expect": "9007199254740993", "show": "n = (2**53 + 1) ** 2", "why": "2**53 + 1 is the first whole number that a float cannot store exactly. So any answer that uses floats is off by one. Only exact whole-number arithmetic gets this right."},
+  {"name": "A huge number that is not a square", "args": "(2**127 - 1,)", "expect": "13043817825332782212", "show": "n = 2**127 - 1", "why": "This number is not a perfect square, and it is far too big for a float to store exactly. The answer is the last r with r * r <= n."}
+]

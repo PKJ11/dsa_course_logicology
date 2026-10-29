@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08",
+  "title": "Design System: DSA self-paced (kartikvyas.in /dsa)",
+  "extensions": {
+    "colorMeta": {
+      "board": {
+        "role": "primary",
+        "displayName": "Station-Board Yellow",
+        "canonical": "#f4c430",
+        "tonalRamp": [
+          "#3d2f05",
+          "#6b520a",
+          "#9c7810",
+          "#e2ae12",
+          "#f4c430",
+          "#f8d66a",
+          "#fbe7a3",
+          "#fdf3cf"
+        ]
+      },
+      "board-deep": {
+        "role": "primary",
+        "displayName": "Board Deep",
+        "canonical": "#e2ae12"
+      },
+      "board-pale": {
+        "role": "primary",
+        "displayName": "Board Pale",
+        "canonical": "#fdf3cf"
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Board Ink",
+        "canonical": "#141414",
+        "tonalRamp": [
+          "#141414",
+          "#2c2c2a",
+          "#3a3a37",
+          "#66655f",
+          "#8f8e87",
+          "#b9b8b1",
+          "#d6d5cf",
+          "#f3f3f0"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "#3a3a37"
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink 3",
+        "canonical": "#66655f"
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "White Ground",
+        "canonical": "#ffffff"
+      },
+      "ground-2": {
+        "role": "neutral",
+        "displayName": "Ground 2",
+        "canonical": "#f3f3f0"
+      },
+      "ground-3": {
+        "role": "neutral",
+        "displayName": "Ground 3",
+        "canonical": "#e9e9e4"
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Soft Rule",
+        "canonical": "#d6d5cf"
+      },
+      "platform-blue": {
+        "role": "secondary",
+        "displayName": "Platform-Number Blue",
+        "canonical": "#1e5aa8",
+        "tonalRamp": [
+          "#0b2140",
+          "#123566",
+          "#164683",
+          "#1e5aa8",
+          "#4a7cc0",
+          "#86a8d6",
+          "#bfd2ec",
+          "#e6eef8"
+        ]
+      },
+      "platform-blue-deep": {
+        "role": "secondary",
+        "displayName": "Blue Deep",
+        "canonical": "#164683"
+      },
+      "platform-blue-pale": {
+        "role": "secondary",
+        "displayName": "Blue Pale",
+        "canonical": "#e6eef8"
+      },
+      "signal-red": {
+        "role": "tertiary",
+        "displayName": "Signal Red",
+        "canonical": "#b3282d",
+        "tonalRamp": [
+          "#3a0c0e",
+          "#631517",
+          "#8c1e22",
+          "#b3282d",
+          "#cf5a5e",
+          "#e49497",
+          "#f3c8c9",
+          "#fbeaea"
+        ]
+      },
+      "signal-red-pale": {
+        "role": "tertiary",
+        "displayName": "Red Pale",
+        "canonical": "#fbeaea"
+      },
+      "syntax-string": {
+        "role": "neutral",
+        "displayName": "Syntax String",
+        "canonical": "#8a5300"
+      },
+      "syntax-number": {
+        "role": "neutral",
+        "displayName": "Syntax Number",
+        "canonical": "#7a2f8f"
+      },
+      "syntax-builtin": {
+        "role": "neutral",
+        "displayName": "Syntax Builtin",
+        "canonical": "#0d6b6b"
+      },
+      "syntax-comment": {
+        "role": "neutral",
+        "displayName": "Syntax Comment",
+        "canonical": "#74736c"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Board Title",
+        "purpose": "Station board title only; uppercase, balanced. 1.75rem compact, 2rem under 760px."
+      },
+      "invariant": {
+        "displayName": "Invariant",
+        "purpose": "The one loud sentence on the yellow invariant band."
+      },
+      "headline": {
+        "displayName": "Section Heading",
+        "purpose": "Lesson h2s, which are also contents-rail anchors."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Lesson h3 and station names on the map."
+      },
+      "body": {
+        "displayName": "Reading Serif",
+        "purpose": "All lesson prose, 66ch column, never on yellow."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Opening paragraph of a lesson, ink-2."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Buttons, summaries, code heads, test summaries."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Timetable heads, route stop labels, index plates, metadata; tabular figures."
+      },
+      "plate": {
+        "displayName": "Plate",
+        "purpose": "Station codes in black plates at 26/15/12px."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Code blocks, editor, array cell values, train bodies, rail names."
+      }
+    },
+    "shadows": [
+      {
+        "name": "frame-current",
+        "value": "inset 0 0 0 3px #141414",
+        "purpose": "Drawn heavy frame on the current/mid cell. Rule work, not elevation."
+      },
+      {
+        "name": "double-rule-found",
+        "value": "inset 0 0 0 3px #141414, inset 0 0 0 6px #f4c430, inset 0 0 0 7.5px #141414",
+        "purpose": "Double rule marking a found cell."
+      },
+      {
+        "name": "rows-current",
+        "value": "inset 0 2px 0 #141414, inset 0 -2px 0 #141414",
+        "purpose": "Ink rules above and below the current timetable row (1.5px on marked code lines)."
+      },
+      {
+        "name": "halo-here",
+        "value": "0 0 0 4px #ffffff, 0 0 0 7px #1e5aa8",
+        "purpose": "Ground-and-blue halo ring on the you-are-here station node (route dot uses 3px outline + 6px ring)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Exponential ease-out for pointer trains, window bracket and cell state changes."
+      },
+      {
+        "name": "move",
+        "value": "220ms",
+        "purpose": "One whole step of a figure."
+      },
+      {
+        "name": "hover",
+        "value": "120ms ease",
+        "purpose": "Colour-only hover transitions on buttons and departure cards."
+      },
+      {
+        "name": "autoplay-interval",
+        "value": "1300ms",
+        "purpose": "Play-through advance in the Stepper."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0ms",
+        "purpose": "All transitions and animations collapse under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "760px"
+      },
+      {
+        "name": "practice",
+        "value": "860px"
+      },
+      {
+        "name": "map",
+        "value": "1020px"
+      },
+      {
+        "name": "lesson-rail",
+        "value": "1120px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Station Board",
+      "kind": "custom",
+      "refersTo": "station-board",
+      "description": "Full-bleed yellow band between 3px ink rules: black code plate, uppercase title, square-separated facts.",
+      "html": "<div class=\"ds-board\"><span class=\"ds-plate\">BSRC</span><h1 class=\"ds-board-title\">The invariant</h1><p class=\"ds-board-sub\"><span>Binary search</span><span>Lesson 2 of 6</span><span>16 min</span></p></div>",
+      "css": ".ds-board { background: #f4c430; color: #141414; border-top: 3px solid #141414; border-bottom: 3px solid #141414; display: grid; grid-template-columns: auto 1fr; gap: 8px 24px; align-items: center; padding: 26px 32px 24px; font-family: Archivo, 'Arial Narrow', sans-serif; } .ds-plate { display: inline-flex; background: #141414; color: #f4c430; font-weight: 800; font-variation-settings: 'wdth' 125; letter-spacing: 0.06em; line-height: 1; font-size: 26px; padding: 14px 16px 13px; } .ds-board-title { margin: 0; font-weight: 800; font-variation-settings: 'wdth' 116; text-transform: uppercase; font-size: 3rem; line-height: 1.02; letter-spacing: -0.01em; } .ds-board-sub { grid-column: 2; margin: 0; display: flex; gap: 4px 18px; font-size: 16px; font-weight: 550; } .ds-board-sub span + span::before { content: ''; display: inline-block; width: 5px; height: 5px; background: #141414; margin-right: 18px; vertical-align: middle; }"
+    },
+    {
+      "name": "Route Strip",
+      "kind": "nav",
+      "refersTo": "route-strip",
+      "description": "Lesson stops on a 3px ink line: completed filled, here blue with halo. The previous and next station names at the ends wrap to a second balanced line; they are never cut with an ellipsis.",
+      "html": "<nav class=\"ds-route\"><ol class=\"ds-stops\"><li class=\"ds-stop is-done\"><a href=\"#\"><span class=\"ds-dot\"></span><span class=\"ds-lbl\">BSRC-1</span></a></li><li class=\"ds-stop is-here\"><a href=\"#\"><span class=\"ds-dot\"></span><span class=\"ds-lbl\">BSRC-2</span></a></li><li class=\"ds-stop\"><a href=\"#\"><span class=\"ds-dot\"></span><span class=\"ds-lbl\">BSRC-3</span></a></li></ol></nav>",
+      "css": ".ds-route { padding: 16px 24px 14px; border-bottom: 1px solid #d6d5cf; background: #fff; font-family: Archivo, 'Arial Narrow', sans-serif; } .ds-stops { position: relative; display: flex; justify-content: space-between; list-style: none; margin: 0; padding: 0; } .ds-stops::before { content: ''; position: absolute; left: 8px; right: 8px; top: 8px; height: 3px; background: #141414; } .ds-stop a { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; } .ds-dot { width: 19px; height: 19px; box-sizing: border-box; border: 3px solid #141414; border-radius: 50%; background: #fff; } .ds-stop.is-done .ds-dot { background: #141414; } .ds-stop.is-here .ds-dot { background: #1e5aa8; border-color: #1e5aa8; outline: 3px solid #fff; box-shadow: 0 0 0 6px #1e5aa8; } .ds-lbl { font-size: 12px; font-weight: 700; letter-spacing: 0.04em; font-variation-settings: 'wdth' 112; color: #3a3a37; } .ds-stop.is-here .ds-lbl { color: #1e5aa8; } .ds-stop a:hover .ds-lbl { text-decoration: underline; text-underline-offset: 3px; } .ds-stop a:focus-visible { outline: 3px solid #1e5aa8; outline-offset: 2px; }"
+    },
+    {
+      "name": "Board Button (primary)",
+      "kind": "button",
+      "refersTo": "button-board",
+      "description": "Yellow primary action: Next step, Run tests.",
+      "html": "<button class=\"ds-btn ds-btn-board\">Next step <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border: 1.5px solid #141414; border-radius: 2px; background: #fff; color: #141414; font-family: Archivo, 'Arial Narrow', sans-serif; font-variation-settings: 'wdth' 104; font-weight: 650; font-size: 15px; line-height: 1; cursor: pointer; transition: background-color 120ms ease, color 120ms ease; } .ds-btn-board { background: #f4c430; } .ds-btn-board:hover { background: #e2ae12; } .ds-btn:focus-visible { outline: 3px solid #1e5aa8; outline-offset: 2px; } .ds-btn-board:disabled { background: #fdf3cf; opacity: 0.38; cursor: not-allowed; }"
+    },
+    {
+      "name": "Default Button",
+      "kind": "button",
+      "refersTo": "button-default",
+      "description": "White ruled button; hover Ground 2, active Ground 3.",
+      "html": "<button class=\"ds-btn2\">Reset</button>",
+      "css": ".ds-btn2 { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border: 1.5px solid #141414; border-radius: 2px; background: #fff; color: #141414; font-family: Archivo, 'Arial Narrow', sans-serif; font-variation-settings: 'wdth' 104; font-weight: 650; font-size: 15px; cursor: pointer; transition: background-color 120ms ease; } .ds-btn2:hover { background: #f3f3f0; } .ds-btn2:active { background: #e9e9e4; } .ds-btn2:focus-visible { outline: 3px solid #1e5aa8; outline-offset: 2px; }"
+    },
+    {
+      "name": "Array Track States",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "Platform cells with blue index plates showing the shared state vocabulary: eliminated, plain, mid, found, violated.",
+      "html": "<div class=\"ds-track\"><div class=\"ds-row\"><b>0</b><b class=\"out\">1</b><b>2</b><b>3</b><b>4</b></div><div class=\"ds-row\"><span class=\"ds-cell is-out\">3</span><span class=\"ds-cell is-out\">7</span><span class=\"ds-cell is-mid\">11</span><span class=\"ds-cell is-found\">14</span><span class=\"ds-cell is-violated\">19</span></div></div>",
+      "css": ".ds-track { font-family: Archivo, 'Arial Narrow', sans-serif; } .ds-row { display: grid; grid-template-columns: repeat(5, 48px); } .ds-row b { justify-self: center; min-width: 22px; height: 20px; margin-bottom: 6px; display: inline-flex; align-items: center; justify-content: center; background: #1e5aa8; color: #fff; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; } .ds-row b.out { background: #e9e9e4; color: #66655f; } .ds-cell { position: relative; height: 52px; display: flex; align-items: center; justify-content: center; border: 1.5px solid #141414; margin-left: -1.5px; background: #fff; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 18px; font-weight: 500; transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-cell:first-child { margin-left: 0; } .ds-cell.is-out { color: #8f8e87; background: repeating-linear-gradient(135deg, #f3f3f0 0 5px, #dedcd5 5px 6.5px); } .ds-cell.is-mid { background: #f4c430; box-shadow: inset 0 0 0 3px #141414; font-weight: 700; z-index: 1; } .ds-cell.is-found { background: #f4c430; box-shadow: inset 0 0 0 3px #141414, inset 0 0 0 6px #f4c430, inset 0 0 0 7.5px #141414; font-weight: 700; z-index: 1; } .ds-cell.is-violated { background: #fbeaea; color: #b3282d; text-decoration: line-through; text-decoration-thickness: 2px; }"
+    },
+    {
+      "name": "Hash Table Stage",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "Buckets or slots as rows with blue index plates; a blue train marks the probed row; deleted slots are hatched, never red.",
+      "html": "<div class=\"ds-ht\"><div class=\"ds-ht-row\"><span class=\"ds-ht-mark\"></span><b>0</b><span class=\"ds-ht-slot\">20</span></div><div class=\"ds-ht-row\"><span class=\"ds-ht-mark\"></span><b>1</b><span class=\"ds-ht-slot is-tomb\"><i>deleted</i></span></div><div class=\"ds-ht-row\"><span class=\"ds-ht-mark\"><span class=\"ds-ht-train\">i</span></span><b class=\"is-here\">2</b><span class=\"ds-ht-slot is-cur\">22</span></div><div class=\"ds-ht-row\"><span class=\"ds-ht-mark\"></span><b>3</b><span class=\"ds-ht-slot\"></span></div></div>",
+      "css": ".ds-ht { display: grid; gap: 6px; width: max-content; font-family: Archivo, 'Arial Narrow', sans-serif; } .ds-ht-row { display: flex; align-items: center; gap: 8px; min-height: 36px; } .ds-ht-mark { width: 46px; display: flex; justify-content: flex-end; } .ds-ht-train { position: relative; min-width: 34px; height: 22px; padding: 0 6px; display: inline-flex; align-items: center; justify-content: center; background: #1e5aa8; color: #fff; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 700; } .ds-ht-train::after { content: ''; position: absolute; right: -7px; top: 4px; border-left: 7px solid #1e5aa8; border-top: 7px solid transparent; border-bottom: 7px solid transparent; } .ds-ht-row b { min-width: 22px; height: 20px; display: inline-flex; align-items: center; justify-content: center; background: #1e5aa8; color: #fff; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; } .ds-ht-row b.is-here { box-shadow: 0 0 0 2px #fff, 0 0 0 4px #1e5aa8; } .ds-ht-slot { width: 96px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1.5px solid #141414; background: #fff; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 15px; font-weight: 500; transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-ht-slot.is-cur { background: #f4c430; box-shadow: inset 0 0 0 3px #141414; font-weight: 700; } .ds-ht-slot.is-tomb { background: repeating-linear-gradient(135deg, #f3f3f0 0 5px, #dedcd5 5px 6.5px); } .ds-ht-slot i { font-style: normal; font-family: Archivo, 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 750; color: #66655f; background: #fff; padding: 0 4px; }"
+    },
+    {
+      "name": "Timetable",
+      "kind": "custom",
+      "refersTo": "timetable-row-current",
+      "description": "Dense ruled table; current row Board Pale between 2px ink rules.",
+      "html": "<div class=\"ds-tt-wrap\"><table class=\"ds-tt\"><thead><tr><th>Stop</th><th>Lesson</th><th class=\"r\">Min</th></tr></thead><tbody><tr><td>BSRC-1</td><td>Halving the search space</td><td class=\"r\">14</td></tr><tr class=\"is-current\"><td>BSRC-2</td><td>The invariant</td><td class=\"r\">16</td></tr><tr><td>BSRC-3</td><td>First and last occurrence</td><td class=\"r\">15</td></tr></tbody></table></div>",
+      "css": ".ds-tt-wrap { border-top: 3px solid #141414; border-bottom: 1.5px solid #141414; } .ds-tt { width: 100%; border-collapse: collapse; font-family: Archivo, 'Arial Narrow', sans-serif; font-variant-numeric: tabular-nums; font-size: 15px; color: #141414; } .ds-tt th { text-align: left; font-size: 12.5px; font-weight: 750; letter-spacing: 0.02em; color: #3a3a37; padding: 9px 12px; border-bottom: 1.5px solid #141414; } .ds-tt td { padding: 9px 12px; border-bottom: 1px solid #d6d5cf; } .ds-tt tr:last-child td { border-bottom: 0; } .ds-tt .r { text-align: right; } .ds-tt tr.is-current td { background: #fdf3cf; box-shadow: inset 0 2px 0 #141414, inset 0 -2px 0 #141414; font-weight: 700; }"
+    },
+    {
+      "name": "Invariant Band",
+      "kind": "custom",
+      "refersTo": "invariant",
+      "description": "The lesson's one loud line in board face on yellow between heavy rules. Its text and `M` children are glued so indexed terms, short calls, bracket groups and arrows with their ends never break (figure readouts also keep short \" · \" items whole); long formulas are written as no-break pieces with each operator starting the next piece.",
+      "html": "<aside class=\"ds-inv\"><span class=\"ds-inv-plate\">INVARIANT</span><p class=\"ds-inv-text\">If t is anywhere in a, then it is in a[lo..hi].</p></aside>",
+      "css": ".ds-inv { background: #f4c430; border-top: 3px solid #141414; border-bottom: 3px solid #141414; padding: 22px 26px 24px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; font-family: Archivo, 'Arial Narrow', sans-serif; color: #141414; } .ds-inv-plate { background: #141414; color: #f4c430; font-weight: 800; font-variation-settings: 'wdth' 125; letter-spacing: 0.06em; font-size: 12px; line-height: 1; padding: 5px 6px 4px; } .ds-inv-text { margin: 0; font-variation-settings: 'wdth' 106; font-weight: 750; font-size: 1.55rem; line-height: 1.28; }"
+    },
+    {
+      "name": "Timetable Note",
+      "kind": "card",
+      "refersTo": "note",
+      "description": "Note between 1px ink rules, no fill, no side stripe; warning variant has a 2px red top rule and red title.",
+      "html": "<aside class=\"ds-note\"><p class=\"ds-note-title\">The bigger idea</p><p class=\"ds-note-body\">Search for a boundary, not a value.</p></aside><aside class=\"ds-note ds-note-warn\"><p class=\"ds-note-title\">Invariant without termination</p><p class=\"ds-note-body\">A loop can keep its promise and never stop.</p></aside>",
+      "css": ".ds-note { margin: 0 0 18px; padding: 12px 0 10px; border-top: 1px solid #141414; border-bottom: 1px solid #141414; } .ds-note-title { margin: 0 0 4px; font-family: Archivo, 'Arial Narrow', sans-serif; font-variation-settings: 'wdth' 108; font-weight: 800; font-size: 15px; color: #141414; } .ds-note-body { margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 1.02rem; line-height: 1.6; } .ds-note-warn { border-top: 2px solid #b3282d; } .ds-note-warn .ds-note-title { color: #b3282d; }"
+    },
+    {
+      "name": "Verdicts",
+      "kind": "chip",
+      "refersTo": "verdict-ok",
+      "description": "Readout verdicts: ok is ink in a double rule, bad is red, info is blue.",
+      "html": "<span class=\"ds-v ds-v-ok\">41 is inside the window</span> <span class=\"ds-v ds-v-bad\">window lost the target</span> <span class=\"ds-v ds-v-info\">boundary at 5</span>",
+      "css": ".ds-v { display: inline-flex; align-items: center; gap: 6px; font-family: Archivo, 'Arial Narrow', sans-serif; font-weight: 700; font-size: 13.5px; padding: 3px 9px 2px; border: 1.5px solid currentColor; } .ds-v-ok { color: #141414; background: #fff; border: 4px double #141414; padding: 1px 8px 0; } .ds-v-bad { color: #b3282d; background: #fbeaea; } .ds-v-info { color: #164683; background: #e6eef8; }"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Ruled text field in board face.",
+      "html": "<input class=\"ds-field\" placeholder=\"Instructor passcode\">",
+      "css": ".ds-field { height: 34px; padding: 0 10px; border: 1.5px solid #141414; border-radius: 2px; font-family: Archivo, 'Arial Narrow', sans-serif; font-size: 14px; background: #fff; color: #141414; min-width: 200px; } .ds-field::placeholder { color: #7d7c75; } .ds-field:focus-visible { outline: 3px solid #1e5aa8; outline-offset: 2px; }"
+    },
+    {
+      "name": "Tree Node Tags",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "A small board-face tag just right of a tree node: an AVL balance or a name (plain), a broken balance (red), a red-black colour as a letter (R plain, B ink). The colour red is never used for a red node. A plain tag also names the subtree that moves across in a rotation (moves, BALT-2.1); the double rule stays reserved for found. With `full`, a tree keeps its full size inside a scrolling Follow box instead of shrinking to fit a phone (DVCQ-5.1, HARD-3.1).",
+      "html": "<div class=\"ds-tt\"><span class=\"ds-tt-node\">4</span><span class=\"ds-tt-tag\">0</span><span class=\"ds-tt-node is-cur\">7</span><span class=\"ds-tt-tag is-bad\">+2</span><span class=\"ds-tt-node\">2</span><span class=\"ds-tt-tag is-ink\">B</span><span class=\"ds-tt-node\">5</span><span class=\"ds-tt-tag\">R</span></div>",
+      "css": ".ds-tt { display: flex; align-items: center; gap: 3px; font-family: 'JetBrains Mono', ui-monospace, monospace; } .ds-tt-node { min-width: 34px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid #141414; background: #fff; font-size: 13px; font-weight: 600; margin-left: 14px; } .ds-tt-node.is-cur { background: #f4c430; box-shadow: inset 0 0 0 3px #141414; font-weight: 800; } .ds-tt-tag { min-width: 16px; height: 15px; padding: 0 3px; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid #141414; background: #fff; font-family: Archivo, 'Arial Narrow', sans-serif; font-size: 10px; font-weight: 800; color: #141414; } .ds-tt-tag.is-ink { background: #141414; color: #f4c430; } .ds-tt-tag.is-bad { border-color: #b3282d; background: #fbeaea; color: #b3282d; }"
+    },
+    {
+      "name": "Skip List Stage",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "Levels of linked lists, level 0 at the bottom, numbered by blue plates; a grey head column, key towers as square boxes, None plates at the end; the search path is the current mark and thick arrows.",
+      "html": "<div class=\"ds-sk\"><div class=\"ds-sk-row\"><b>1</b><span class=\"ds-sk-head\">&bull;</span><i class=\"is-cur\"></i><span class=\"ds-sk-n is-done\">6</span><i></i><span class=\"ds-sk-gap\"></span><span class=\"ds-sk-n\">17</span><i></i><span class=\"ds-sk-none\">None</span></div><div class=\"ds-sk-row\"><b>0</b><span class=\"ds-sk-head\">&bull;</span><i></i><span class=\"ds-sk-n\">6</span><i class=\"is-cur\"></i><span class=\"ds-sk-n is-cur\">9</span><i></i><span class=\"ds-sk-n\">17</span><i></i><span class=\"ds-sk-none\">None</span></div></div>",
+      "css": ".ds-sk { display: grid; gap: 14px; width: max-content; font-family: 'JetBrains Mono', ui-monospace, monospace; } .ds-sk-row { display: flex; align-items: center; } .ds-sk-row b { width: 22px; height: 20px; margin-right: 10px; display: inline-flex; align-items: center; justify-content: center; background: #1e5aa8; color: #fff; font-family: Archivo, 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 750; } .ds-sk-head { width: 30px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid #141414; background: #f3f3f0; } .ds-sk-n, .ds-sk-gap { width: 42px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid #141414; background: #fff; font-size: 13px; font-weight: 600; } .ds-sk-gap { border-color: transparent; } .ds-sk-n.is-cur { background: #f4c430; box-shadow: inset 0 0 0 3px #141414; font-weight: 800; } .ds-sk-n.is-done { background: #141414; color: #f4c430; } .ds-sk-row i { width: 16px; height: 0; border-top: 1.75px solid #141414; } .ds-sk-row i.is-cur { border-top-width: 3px; } .ds-sk-none { height: 24px; padding: 0 8px; display: inline-flex; align-items: center; border: 1px solid #8f8e87; color: #8f8e87; font-family: Archivo, 'Arial Narrow', sans-serif; font-size: 12px; font-weight: 750; }"
+    },
+    {
+      "name": "Spans Stage",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "Rows of range bars on the same columns as the array track below them, so each stored value sits exactly over the cells it covers: Fenwick bars by length, segment-tree levels, sparse-table blocks, √n blocks. Bars use the shared marks (current yellow in a 3px frame, found double rule, done ink, out hatched, todo dashed); a small ink tag on a bar's top right shows a pending lazy add. Row names sit in the left margin where the track keeps its rail names. In segment-tree walks the node or cell being taken is current on its own step and found afterwards, and a partly-inside parent gives up its heavy frame while its children are visited, so the caption's node is the only heavy frame.",
+      "html": "<div class=\"ds-sp\"><div class=\"ds-sp-row\"><span class=\"ds-sp-bar is-done\" style=\"grid-column:1/9\">36</span></div><div class=\"ds-sp-row\"><span class=\"ds-sp-bar is-cur\" style=\"grid-column:1/5\">18</span><span class=\"ds-sp-bar\" style=\"grid-column:5/9\">18<b>+3</b></span></div><div class=\"ds-sp-row\"><span class=\"ds-sp-bar is-out\" style=\"grid-column:1/3\">7</span><span class=\"ds-sp-bar is-found\" style=\"grid-column:3/5\">11</span><span class=\"ds-sp-bar\" style=\"grid-column:5/7\">7</span><span class=\"ds-sp-bar\" style=\"grid-column:7/9\">11</span></div><div class=\"ds-sp-cells\"><i>5</i><i>2</i><i>7</i><i>4</i><i>6</i><i>1</i><i>8</i><i>3</i></div></div>",
+      "css": ".ds-sp { display: grid; gap: 7px; width: 384px; font-family: 'JetBrains Mono', ui-monospace, monospace; } .ds-sp-row { display: grid; grid-template-columns: repeat(8, 48px); height: 30px; } .ds-sp-bar { position: relative; margin: 0 3px; display: flex; align-items: center; justify-content: center; border: 1.5px solid #141414; background: #fff; font-size: 13.5px; font-weight: 600; } .ds-sp-bar.is-cur { background: #f4c430; box-shadow: inset 0 0 0 1.5px #141414; font-weight: 800; } .ds-sp-bar.is-found { background: #f4c430; box-shadow: inset 0 0 0 1.5px #141414, inset 0 0 0 4px #f4c430, inset 0 0 0 5.5px #141414; font-weight: 800; } .ds-sp-bar.is-done { background: #141414; color: #f4c430; } .ds-sp-bar.is-out { border-color: #8f8e87; color: #8f8e87; background: repeating-linear-gradient(135deg, #f3f3f0 0 5px, #dedcd5 5px 6.5px); } .ds-sp-bar b { position: absolute; top: -8px; right: -4px; padding: 0 4px; height: 15px; display: inline-flex; align-items: center; background: #141414; color: #f4c430; font-family: Archivo, 'Arial Narrow', sans-serif; font-size: 10px; font-weight: 800; } .ds-sp-cells { display: grid; grid-template-columns: repeat(8, 48px); margin-top: 6px; } .ds-sp-cells i { height: 52px; display: flex; align-items: center; justify-content: center; border: 1.5px solid #141414; margin-left: -1.5px; font-style: normal; font-size: 18px; }"
+    },
+    {
+      "name": "Forest (Tree with several roots)",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "Union-find sets as a forest: every node without a parent is a root, and the trees stand side by side in list order, with a little more space between trees than between siblings. On wide screens a plain tag on a root shows its rank; on every width a rank list under the parent list shows it too (blank for non-roots), and on phones the tags are left out and the forest narrows (unit 36, forestGap 0.06) so 8 single nodes fit 358px. With slide, a union or a path compression moves whole subtrees. Drawn above the parent list that stores it.",
+      "html": "<div class=\"ds-fo\"><div class=\"ds-fo-tree\"><span class=\"ds-fo-n is-found\">3</span><span class=\"ds-fo-kids\"><span class=\"ds-fo-n is-cur\">1</span><span class=\"ds-fo-n\">2</span></span></div><div class=\"ds-fo-tree\"><span class=\"ds-fo-n\">5</span><span class=\"ds-fo-kids\"><span class=\"ds-fo-n\">4</span></span></div><div class=\"ds-fo-tree\"><span class=\"ds-fo-n\">6</span></div></div>",
+      "css": ".ds-fo { display: flex; gap: 30px; align-items: flex-start; font-family: 'JetBrains Mono', ui-monospace, monospace; } .ds-fo-tree { display: grid; justify-items: center; gap: 22px; } .ds-fo-kids { display: flex; gap: 10px; } .ds-fo-n { min-width: 34px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid #141414; background: #fff; font-size: 13px; font-weight: 600; } .ds-fo-n.is-cur { background: #f4c430; box-shadow: inset 0 0 0 1.5px #141414; font-weight: 800; } .ds-fo-n.is-found { background: #f4c430; box-shadow: inset 0 0 0 1.5px #141414, inset 0 0 0 4px #f4c430, inset 0 0 0 5.5px #141414; font-weight: 800; }"
+    },
+    {
+      "name": "Timeline Stage",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "Intervals as bars placed by time over a numbered axis (GRDY): bookings, jobs on one machine, trains on platforms, and also coins along an amount or items along a bag's kilograms. The plot is fluid, so it always fits the stage; bars are placed in percent of the span with a 3px gap, so bars that touch stay readable. Bars use the shared marks (current yellow in a 3px frame, found double rule, done ink, out hatched with a plain 'skip' tag, todo dashed). A blue 2px vertical mark with a blue label shows a position in time (now, free from); a dashed ink-3 mark with a white label shows a limit (a deadline). Row names sit in a left margin. Bars keep their ids, so a swap glides over 420ms. `tagAt: \"end\"` puts a short bar's tag outside its right end.",
+      "html": "<div class=\"ds-tl\"><div class=\"ds-tl-row\"><span class=\"ds-tl-name\">chosen</span><span class=\"ds-tl-bar is-done\" style=\"left:9.09%;width:calc(18.18% - 3px)\">B</span><span class=\"ds-tl-bar is-cur\" style=\"left:27.27%;width:calc(18.18% - 3px)\">C</span></div><div class=\"ds-tl-row\"><span class=\"ds-tl-bar is-out\" style=\"left:0;width:calc(63.6% - 3px)\">A<b>skip</b></span></div><div class=\"ds-tl-mark\" style=\"left:45.45%\"><i>free 5</i></div><div class=\"ds-tl-axis\"></div></div>",
+      "css": ".ds-tl { position: relative; width: 440px; margin-left: 56px; padding-top: 22px; display: grid; gap: 6px; font-family: 'JetBrains Mono', ui-monospace, monospace; } .ds-tl-row { position: relative; height: 30px; } .ds-tl-name { position: absolute; right: 100%; padding-right: 8px; line-height: 30px; font-size: 12px; font-weight: 600; color: #3a3a37; } .ds-tl-bar { position: absolute; top: 0; height: 30px; display: flex; align-items: center; justify-content: center; border: 1.5px solid #141414; background: #fff; font-size: 13px; font-weight: 600; box-sizing: border-box; } .ds-tl-bar.is-cur { background: #f4c430; box-shadow: inset 0 0 0 1.5px #141414; font-weight: 800; } .ds-tl-bar.is-done { background: #141414; color: #f4c430; } .ds-tl-bar.is-out { border-color: #8f8e87; color: #8f8e87; background: repeating-linear-gradient(135deg, #f3f3f0 0 5px, #dedcd5 5px 6.5px); } .ds-tl-bar b { position: absolute; top: -8px; right: -4px; padding: 0 4px; height: 15px; display: inline-flex; align-items: center; background: #fff; color: #141414; box-shadow: inset 0 0 0 1px #141414; font-family: Archivo, 'Arial Narrow', sans-serif; font-size: 10px; font-weight: 800; } .ds-tl-mark { position: absolute; top: 16px; bottom: 18px; border-left: 2px solid #1e5aa8; } .ds-tl-mark i { position: absolute; bottom: 100%; transform: translateX(-50%); padding: 1px 4px; background: #1e5aa8; color: #fff; font-style: normal; font-size: 11px; font-weight: 700; white-space: nowrap; } .ds-tl-axis { height: 18px; border-top: 1.5px solid #141414; }"
+    },
+    {
+      "name": "Plane Stage",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "Points on a grid of whole-number coordinates (DVCQ closest pair; GEOM reuses it). An SVG measured to the stage width (640px at most), so it always fits a phone and its labels keep their size; y goes up, with 1px soft grid lines and ink-3 axis numbers (every second number when a unit is under 22px). Points are squares, not dots, because circles stay reserved for the line's own geometry: plain white in a 1.5px ink frame, current yellow in a 3px frame, found yellow with an inner ink square (a double rule), done ink, out hatched grey, bad red. Labels are short board-face letters beside the point, with a white halo. A blue 2px vertical line with a blue plate is a position (the dividing line); dashed ink-3 lines with white plates are limits (the strip edges at -δ and +δ); when plates would touch, the limit plates move up a row. The strip is a Board Pale band; a quiet Ground 2 area marks the half not being looked at. Segments join pairs: the pair being compared 2px ink, the best pair 2px ink over a 9px yellow band, pairs already compared dashed grey, a pair that breaks a rule red; a distance label sits at the middle. An ink box can be split into dashed squares (the δ × 2δ box of 8 squares). GEOM added three options: an arrowhead on a segment (`arrow`, a vector; the head takes the segment's colour), filled polygons through listed points under the grid lines (`polys`: Board Pale for an area or a hull, hatched for an area taken away, Ground 2 for a quiet area), and a point `label` that can differ from its id (an empty label for the far end of a track piece). Labels never sit left of a point near the y-axis numbers; axis numbers are 11.5px on phones.",
+      "html": "<svg class=\"ds-plane\" viewBox=\"0 0 300 170\" width=\"300\"><rect x=\"110\" y=\"10\" width=\"80\" height=\"140\" fill=\"#fdf3cf\"/><g stroke=\"#d6d5cf\"><line x1=\"30\" y1=\"10\" x2=\"30\" y2=\"150\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"150\"/><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"150\"/><line x1=\"150\" y1=\"10\" x2=\"150\" y2=\"150\"/><line x1=\"190\" y1=\"10\" x2=\"190\" y2=\"150\"/><line x1=\"230\" y1=\"10\" x2=\"230\" y2=\"150\"/><line x1=\"270\" y1=\"10\" x2=\"270\" y2=\"150\"/></g><line x1=\"110\" y1=\"10\" x2=\"110\" y2=\"150\" stroke=\"#66655f\" stroke-width=\"2\" stroke-dasharray=\"5 4\"/><line x1=\"190\" y1=\"10\" x2=\"190\" y2=\"150\" stroke=\"#66655f\" stroke-width=\"2\" stroke-dasharray=\"5 4\"/><line x1=\"150\" y1=\"10\" x2=\"150\" y2=\"150\" stroke=\"#1e5aa8\" stroke-width=\"2\"/><line x1=\"130\" y1=\"100\" x2=\"170\" y2=\"80\" stroke=\"#f4c430\" stroke-width=\"9\"/><line x1=\"130\" y1=\"100\" x2=\"170\" y2=\"80\" stroke=\"#141414\" stroke-width=\"2\"/><rect x=\"122.5\" y=\"92.5\" width=\"15\" height=\"15\" fill=\"#f4c430\" stroke=\"#141414\" stroke-width=\"1.5\"/><rect x=\"126\" y=\"96\" width=\"8\" height=\"8\" fill=\"none\" stroke=\"#141414\" stroke-width=\"1.5\"/><rect x=\"162.5\" y=\"72.5\" width=\"15\" height=\"15\" fill=\"#f4c430\" stroke=\"#141414\" stroke-width=\"1.5\"/><rect x=\"166\" y=\"76\" width=\"8\" height=\"8\" fill=\"none\" stroke=\"#141414\" stroke-width=\"1.5\"/><rect x=\"44.5\" y=\"44.5\" width=\"11\" height=\"11\" fill=\"#f3f3f0\" stroke=\"#8f8e87\" stroke-width=\"1.5\"/><rect x=\"244.5\" y=\"124.5\" width=\"11\" height=\"11\" fill=\"#fff\" stroke=\"#141414\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"150\" x2=\"270\" y2=\"150\" stroke=\"#141414\" stroke-width=\"1.5\"/></svg>",
+      "css": ".ds-plane { display: block; font-family: Archivo, 'Arial Narrow', sans-serif; }"
+    },
+    {
+      "name": "Graph Stage",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "Vertices at fixed places joined by edges (GRPH; PATH, SPAN, CONN, FLOW and ADDP reuse it). An SVG measured to its box like the Plane, with the unit capped at 84px so small graphs stay small; y goes down. Vertices are square-cornered 30px boxes with mono labels (circles stay reserved for the line's own geometry): plain white, seen Board Pale (waiting in the queue or on the path), current yellow in the 3px heavy frame, done ink with a yellow label, found yellow with an inner ink frame, out hatched, todo dashed, bad red. A small tag on the top-right corner (or, with `tagAt`, the bottom-right `br` or centred above `t`, on the side no edge leaves from) carries a distance, a team (0 plain, 1 ink: teams are never two colours), an in-degree, or discovery/finish times. Edges are 1.75px ink (arrowheads when directed): being followed 3px, the edge that first reached a vertex 2px on a 9px Board Pale band, an answer 2px on a 9px yellow band, looked at and not used dashed grey, not yet added dotted pale, breaking a rule red 2px. Edge labels are small white plates at the middle (back/forward/cross; weights later). Edges can bend to arc over a vertex, and a == b draws a loop. Beside it, a fixed 260px column holds the frontier: a Queue (a row of 36px boxes, front at the left), a CallStack, or a small table; it drops below the graph on phones.",
+      "html": "<svg class=\"ds-graph\" viewBox=\"0 0 300 130\" width=\"300\"><path d=\"M45,65 L130,25\" stroke=\"#fdf3cf\" stroke-width=\"9\" stroke-linecap=\"round\"/><path d=\"M45,65 L130,25\" stroke=\"#141414\" stroke-width=\"2\"/><path d=\"M45,65 L130,105\" stroke=\"#141414\" stroke-width=\"3\"/><path d=\"M150,25 L230,65\" stroke=\"#a3a29b\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><path d=\"M150,105 L230,65\" stroke=\"#b3282d\" stroke-width=\"2\"/><rect x=\"30\" y=\"50\" width=\"30\" height=\"30\" fill=\"#141414\" stroke=\"#141414\" stroke-width=\"1.5\"/><text x=\"45\" y=\"70\" text-anchor=\"middle\" fill=\"#f4c430\">A</text><rect x=\"122\" y=\"2\" width=\"16\" height=\"15\" fill=\"#fff\" stroke=\"#141414\" stroke-width=\"1.5\"/><text x=\"130\" y=\"13\" text-anchor=\"middle\" font-size=\"10\">1</text><rect x=\"115\" y=\"10\" width=\"30\" height=\"30\" fill=\"#fdf3cf\" stroke=\"#141414\" stroke-width=\"1.5\"/><text x=\"130\" y=\"30\" text-anchor=\"middle\">B</text><rect x=\"115\" y=\"90\" width=\"30\" height=\"30\" fill=\"#f4c430\" stroke=\"#141414\" stroke-width=\"3\"/><text x=\"130\" y=\"110\" text-anchor=\"middle\" font-weight=\"800\">C</text><rect x=\"215\" y=\"50\" width=\"30\" height=\"30\" fill=\"#fff\" stroke=\"#141414\" stroke-width=\"1.5\"/><text x=\"230\" y=\"70\" text-anchor=\"middle\">D</text></svg>",
+      "css": ".ds-graph { display: block; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13.5px; font-weight: 700; }"
+    },
+    {
+      "name": "DP Table (Grid with arrows)",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "The Grid stage used as a dynamic-programming table (DYNP). Column and row plates can carry labels instead of numbers (`colHead`, `rowHead`): the letters of two strings, item names, bag sizes; an empty string is a muted Ground 3 plate with a dash, for the empty prefix, and `null` leaves a row without a plate. A word label (\"best\", \"tails\") widens the plate column with `rowHeadWidth`. Each cell can carry small arrows at the edge facing the cell its value came from (`from`: up, left, diag; 12px, 2px ink stroke, a mark; board yellow on done cells; 10px on phones). A cell being read to work out the current one gets the dashed target outline (`src`), and its own arrows fade to 30% so the outline reads clearly. A traced-back path is Board Pale with a bold value (`path`); a cell where the walk takes something (a letter, an item) is `found`, whose double rule hides the arrows. Sources that are not neighbours (knapsack x - w, LIS j < i) are shown only by the dashed outline. On phones cells are 40px tall, cells with an up or diagonal arrow push their value 8px down, and a table of 8 or more columns narrows to 36px cells so 8 columns plus a word label fit 390px. The grid keeps 8px of room on the right for a found cell's check flag.",
+      "html": "<div class=\"ds-dp\"><div class=\"ds-dp__row\"><span class=\"ds-dp__plate ds-dp__plate--empty\">–</span><span class=\"ds-dp__plate\">B</span><span class=\"ds-dp__plate\">D</span></div><div class=\"ds-dp__row\"><span class=\"ds-dp__plate\">A</span><span class=\"ds-dp__cell ds-dp__cell--path\">0<svg viewBox=\"0 0 12 12\" class=\"ds-dp__arrow\" style=\"top:2px;left:2px\"><path d=\"M11 11 2 2M2 7V2h5\"/></svg></span><span class=\"ds-dp__cell ds-dp__cell--src\">0</span></div><div class=\"ds-dp__row\"><span class=\"ds-dp__plate\">B</span><span class=\"ds-dp__cell ds-dp__cell--found\">1</span><span class=\"ds-dp__cell ds-dp__cell--cur\">1<svg viewBox=\"0 0 12 12\" class=\"ds-dp__arrow\" style=\"left:2px;bottom:3px\"><path d=\"M11 6H2M5.5 2.5 2 6l3.5 3.5\"/></svg></span></div></div>",
+      "css": ".ds-dp { display: inline-grid; gap: 0; font-family: 'JetBrains Mono', monospace; } .ds-dp__row { display: grid; grid-template-columns: 30px repeat(2, 48px); align-items: center; } .ds-dp__plate { justify-self: center; background: #1e5aa8; color: #fff; font: 700 12px Archivo, sans-serif; padding: 2px 6px; } .ds-dp__plate--empty { background: #e9e9e4; color: #66655f; } .ds-dp__cell { position: relative; height: 48px; display: grid; place-items: center; border: 1.5px solid #141414; margin: -0.75px; background: #fff; font-size: 18px; } .ds-dp__cell--cur { background: #f4c430; box-shadow: inset 0 0 0 3px #141414; font-weight: 700; } .ds-dp__cell--found { background: #f4c430; box-shadow: inset 0 0 0 3px #141414, inset 0 0 0 6px #f4c430, inset 0 0 0 7.5px #141414; font-weight: 700; } .ds-dp__cell--path { background: #fdf3cf; font-weight: 700; } .ds-dp__cell--src { outline: 2px dashed #141414; outline-offset: -7px; } .ds-dp__arrow { position: absolute; width: 12px; height: 12px; fill: none; stroke: #141414; stroke-width: 2; }"
+    },
+    {
+      "name": "Bit Row (Grid with place plates)",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "The Grid stage used for numbers in binary (BITS) and for number-theory tables (MATH). A number is one row of 0s and 1s, highest place first, under blue column plates that give each bit's place number (7 to 0), so place 0 is at the right. Word row plates (x, y, x & y, mask, result) sit in a 44px plate column; 8 columns plus that plate fit a 390px phone with 36px cells. The place being worked on is the current mark in the result row and a dashed source outline in the rows it reads; a row being written is Board Pale; a finished result row is ink; bits shifted off the end, and places outside a mask, are hatched. Overflow is shown by the red verdict only. Values of four characters or more (−128, 1071) use the small cell text (14px, 12.5px on phones). MATH reuses the same grid for Euclid's rows, power tables, the sieve (crossed-out numbers hatched, never red; smallest prime factors as corner tags), inverse tables (each 1 found) and Pascal's triangle (diag and up arrows).",
+      "html": "<div class=\"ds-dp\"><div class=\"ds-dp__row\" style=\"grid-template-columns:44px repeat(4,48px)\"><span></span><span class=\"ds-dp__plate\">3</span><span class=\"ds-dp__plate\">2</span><span class=\"ds-dp__plate\">1</span><span class=\"ds-dp__plate\">0</span></div><div class=\"ds-dp__row\" style=\"grid-template-columns:44px repeat(4,48px)\"><span class=\"ds-dp__plate\">x</span><span class=\"ds-dp__cell\">1</span><span class=\"ds-dp__cell ds-dp__cell--src\">1</span><span class=\"ds-dp__cell\">0</span><span class=\"ds-dp__cell\">1</span></div><div class=\"ds-dp__row\" style=\"grid-template-columns:44px repeat(4,48px)\"><span class=\"ds-dp__plate\">x &amp; y</span><span class=\"ds-dp__cell\"></span><span class=\"ds-dp__cell ds-dp__cell--cur\">1</span><span class=\"ds-dp__cell\">0</span><span class=\"ds-dp__cell\">1</span></div></div>",
+      "css": "/* uses the DP Table classes (.ds-dp, .ds-dp__row, .ds-dp__plate, .ds-dp__cell, --cur, --src) */"
+    },
+    {
+      "name": "Weighted Graph Figures",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "The Graph stage with a cost on every edge (PATH, SPAN). Weights are the edge label plates, written with a true minus (−2) and never coloured except when the edge itself is bad. Vertex tags carry the best time so far (∞ before a vertex is reached, −∞ in red for a vertex a negative cycle can reach) or, in Kruskal's method, the name of the vertex's group. Edge marks: the parent edge of each vertex is the Board Pale tree band, an answer (a route, a chosen spanning-tree edge) the yellow found band, an edge looked at and not used or skipped (a loop in Kruskal, an edge dropped in a swap) is dashed old, the edge being relaxed or considered is 3px current, and red is kept for wrong results and broken rules: Dijkstra's late relaxation of a negative edge, the edges of a negative cycle. Heaps and deques are Queue rows of `time vertex` entries, smallest first, with out-of-date entries (lazy removal) hatched. Side panels: a three-column `tt vars` table (station, time, parent) for relaxing by hand, the edge list in relaxation order (Bellman–Ford) or sorted by cost with a hatched `skip` word (Kruskal), a topological order as a plain Queue. Floyd–Warshall puts a 4 × 4 Grid with letter plates beside the graph: the changed cell current, the two cells it was made from with the dashed target outline, a wrong entry violated (struck, red). A* is a Grid maze: walls hatched, reached squares carry g, waiting squares carry h as a small tag, taken squares ink, the route Board Pale and the goal found. A cut is shown by giving one side's vertices the Board Pale seen state; crossing edges are current and the cheapest crossing edge found."
+    },
+    {
+      "name": "Connectivity Figures",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "The Graph stage for directed groups, low-link numbers and 2-SAT (CONN). Vertices are junctions or conditions; edges carry no plates except the word `back` on a back edge in the bridge search. Tags carry discovery/low numbers (`3/1`), a finish number, or a group number (`g0` in Kosaraju's second pass, `0` and `1` for groups in topological order). Vertices on the search path are Board Pale (seen), finished vertices ink (done), the vertex being worked on current, and a group just popped, a cut vertex or a true condition found (the double rule). Bridges get the yellow found band; tree edges the Board Pale band; edges looked at and ignored (into a finished group) are flashed dashed old. Kosaraju's second pass draws every edge turned round. Tarjan's own stack is a Queue named `stack` (top at the right) in the 260px side column; Kosaraju's finish order goes in the readout line, because eight boxes do not fit the side column. Two edges between the same pair (a repeated line, or x → y and y → x in an implication graph) bend apart with `bend`. 2-SAT draws each condition and its opposite (`a`, `¬a`) as mirror vertices; false conditions are hatched, true ones found, and only a variable and its negation in one group are red (a broken rule)."
+    },
+    {
+      "name": "Flow Network Figures",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "The Graph stage as a flow network (FLOW). Each edge plate reads flow/capacity (`9/10`), or the capacity alone before any flow; edges that carry flow have the Board Pale tree band, the augmenting path being sent the yellow found band, and the arcs just changed are 3px current. Red only for broken rules: an edge over its capacity, a vertex where flow in and flow out differ. The residual graph is a separate view of the same stage: a forward arc with the room left and a dashed back arc with the flow that can be undone, each drawn only when above 0, bent apart when both exist. Tags give the BFS distance (level) from s in the residual graph; in Dinic's method lines outside the level graph are dashed old and dead-end vertices hatched. A cut shades the source side Board Pale (seen), marks crossing edges current (the final smallest cut found) and edges back into the side dashed. Bipartite matching puts the left side at x = 0 and the right at x = 2; matched edges are found, an augmenting path alternates current (not matched) and found (matched), matched vertices are ink, and König's cover vertices get the double rule."
+    },
+    {
+      "name": "String Figures",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "The Grid stage for string algorithms (STRG). Columns are places in the text, numbered by the blue plates. The text is one row (T, or s for a string matched against itself) and the pattern a row under it, shifted to the place being tried; the columns the pattern does not cover are blank cells (`blank`: no frame, no fill). A table row (π, Z, h for hashes, d₁ or d₂ for palindrome counts) sits under them. Row plates are single letters (T, P, s, π, Z, h) so 8 columns fit a 390px phone; lessons name them. Marks: letters already known to match (or the Z-box, the palindrome box) Board Pale; the pair being compared current in both rows; a table entry being read (π[k − 1], Z[i − l], the mirror d[j]) the dashed source outline; a full match found; a finished table row ink. A mismatch is not an error and is never red; a hash collision is shown by the red verdict alone, because the hash value itself is correct. Suffix arrays put one suffix per row, its letters in columns, the row plate giving its start, with extra columns `pair`/`rank` (small text) or `lcp`; the letters being compared are Board Pale."
+    },
+    {
+      "name": "Geometry Figures",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "The Plane stage for computational geometry (GEOM), always on whole-number coordinates. Vectors are arrows from O labelled with plates (a, b); the cross product's parallelogram and a triangle are Board Pale polygons; in the shoelace split, triangles with a negative cross product are hatched (taken away), and Pick's interior points are small dashed points with no label. Orientation tests shade the triangle being measured and mark the point being judged current; a crossing or touching pair gets the yellow found band, pieces that do not meet are dashed old with an informational verdict. Andrew's monotone chain draws the chain so far as plain segments, the new point current, a point being popped hatched with the shortcut dashed, and the final hull as found edges round a Board Pale polygon. The sweep line is the blue position line with an `x = …` plate; finished pieces are dashed old, the pieces being checked current, a meeting pair found; the ordered list of pieces on the line is a Queue (`end=\"none\"`, lowest first) in the 260px side column."
+    },
+    {
+      "name": "Advanced DP Figures",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "ADDP reuses existing stages; no stage changed. Tree DP draws the tree with letters only (Tree, unit 50) over a Grid with one column per node and word row plates (value, take, skip; size, down, total): the node being worked on is current in both, its children's cells are dashed sources, finished nodes ink, and the walk back marks the chosen answers Board Pale with the root's answer found. DP on a DAG is the Graph stage laid out in topological order and stretched tall (h 3.6) so edge plates clear the vertex tags on a phone; tags carry the count or best value, the chosen incoming edge has the Board Pale band, the walked-back route the yellow found band, and the order is a plain Queue in the side column. Interval tables are an upper-triangle Grid (blank cells below the diagonal) under a one-row 'piles' Grid whose current stretch is Board Pale; the cell being filled is current and every split it reads is a dashed source; the wrong-order variant shows the unfilled cell it reads as a dashed todo and its wrong result as violated (red). Bitmask DP rows are labelled with the mask in binary (place 0 at the right) beside a distance Grid whose read entries are dashed. Digit DP is transposed so it fits a phone: one row per digit 0-9, one column per place of N (N's digits as column plates); counted free blocks are ink, digits above N are hatched, the tight digit is the single heavy frame and then Board Pale, zero counts stay plain. Knuth's rule shows each cell's best split as a cell tag. Lines on a hull are Plane segments from x = 0 to x = 12 with lettered left ends, dropped lines dashed old with their end hatched, questions as the blue position line with the answer found, the final lower envelope as found segments, and the kept lines as a Queue (front at the left)."
+    },
+    {
+      "name": "Hard Problem Figures",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "HARD reuses existing stages; no stage changed. A certificate check is a Graph whose vertices carry plain group tags (0, 1, 2, never colours); each edge flashes current as it is checked and keeps the Board Pale band once it passes; only an edge inside one group is red, because it breaks the rule. Search with a yes/no helper is a one-row Grid of variables (T or F) with the variable being asked as the heavy frame. The 3-SAT reduction draws one triangle per clause with vertex labels like ¬x2, edges between opposites added as current and arcs bent below or above the rows; the chosen independent set is found. Branch and bound is a Tree (unit 74, edges labelled +A / −A for take and leave) under a two-row item Grid; each node is labelled with its value, a plain tag gives its bound (≤109), pruned branches and items that do not fit (labelled –) are hatched, never red, and the best packing is found. Approximation figures are Graphs: the vertex cover's chosen edges are found with both ends found, edges already covered get the Board Pale band, an edge skipped flashes dashed old; the tour shows the cheapest spanning tree as Board Pale bands, the trip as found edges (one edge per city pair, so tree and trip never share a key), and the first-visit order as a Queue. Miller–Rabin is a Grid with one row per base (a=2) and columns d, 2d, 4d, …; a value that proves nothing (1 at the start, or n − 1) is Board Pale, a witness found; a strong liar's 'prime' is the one red verdict."
+    }
+  ],
+  "narrative": {
+    "northStar": "Trains at a Glance",
+    "overview": "The course is one railway line, drawn the way an Indian Railways station board and timetable booklet are drawn. Every station has a four-letter code (BSRC, ARRS, RECR) set in a black plate; every lesson is a stop on that station's route strip; every list of things to do is a timetable of dense rows between black rules. Inside lessons, an array is a row of numbered platforms and its pointers (lo, mid, hi) are trains, one rail each, stepping a whole platform at a time.\n\nThe frame is loud and the reading is quiet. Station-board yellow with black lettering in an expanded, heavy grotesk owns headings, plates and the one invariant line per lesson. Everything a student reads at length is set in a serif on plain white. Colour carries little meaning on its own: every state is shown by a mark (a frame, a hatch, a double rule, a strike) so the system works in greyscale and for colour-blind students.\n\nThe world is flat, square and ruled. Depth comes from rule weight (3px, 1.5px, 1px), not shadow. Motion is one whole step at a time.\n\nThe whole section is scoped under the `.dsa` root so it can move into kartikvyas.in; the platform bar and breadcrumb above it are a neutral system-font stand-in for the host site and are not part of this world.",
+    "keyCharacteristics": [
+      "Yellow board, black plates, white ground, serif prose.",
+      "Four-letter station codes in black plates name every place in the course.",
+      "State by mark, never colour alone: current, eliminated, found, violated each have a shape.",
+      "Four rule weights do the work shadows do elsewhere.",
+      "Square corners; round only for route dots, station nodes and trains.",
+      "Every figure is a pure function of \"step n of N\"."
+    ],
+    "rules": [
+      {
+        "name": "The No Green Rule",
+        "body": "There is no success colour. Success, \"found\", \"solved\" and \"pass\" are ink: a double rule, a filled mark, or the yellow band between heavy black rules. Never introduce green for a later station.",
+        "section": "colors"
+      },
+      {
+        "name": "The Blue Means Position Rule",
+        "body": "Blue answers \"where\": an index, a platform, a window, you-are-here, the current step. Outside of links and focus, if a blue element does not mark a position, it is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Means Broken Rule",
+        "body": "Red appears only when something failed or an invariant was violated. Warnings that are merely advisory use the warning note (red top rule and title), never red fills.",
+        "section": "colors"
+      },
+      {
+        "name": "The Read Mode Rule",
+        "body": "Serif prose never sits on yellow. Yellow carries board-face text only (titles, plates, the invariant sentence, the solved line, button labels). Anything a student reads as a paragraph is Source Serif on white or Ground 2.",
+        "section": "typography"
+      },
+      {
+        "name": "The Caps Are For Boards Rule",
+        "body": "Uppercase is used for the station board title and inside plates, nowhere else. Section headings, figure titles, notes and timetable heads stay in sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every number that can change or line up (step counts, indices, minutes, test counts, timetable columns) uses tabular figures.",
+        "section": "typography"
+      },
+      {
+        "name": "The Four Weights Rule",
+        "body": "3px for bands, 2px for marks, 1.5px for objects, 1px for rows. A band opens or closes a major area (board edges, invariant, solved band, timetable top, rail lines). A mark is a rule that signals a state or a moving part rather than framing a thing: the rules around the current timetable row, the warning note's red top rule, the window bracket and its end ticks, strike-throughs on violated values, the dashed target outline, pointer trains and the scrubber thumb, status marks and hint rung numbers, arrows between nodes, and the halo rings on \"you are here\" and probed plates. An object is a thing with edges (figures, buttons, cells, code blocks, cards); a row is a division inside a list. Do not introduce a fifth weight. The one exception is the 3px heavy frame of the current cell or node, which borrows the band weight on purpose so the current step is the loudest object on the stage; SVG edges in the Links stage are drawn at 1.75px so they read like 2px marks after anti-aliasing.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** open every page with a station board: black code plate, uppercase title, square-separated facts.",
+      "**Do** name places with four-letter codes in plates (CODE, CODE-n, CODE-Pn, FIG CODE-n.k).",
+      "**Do** show every state with the shared marks: heavy frame for current, hatching for eliminated, double rule for found, red strike for violated.",
+      "**Do** list lessons, tests and comparisons as timetables: 3px top rule, 1.5px head rule, 1px soft row rules, tabular figures, current row Board Pale between 2px ink rules.",
+      "**Do** build every figure on the Stepper: head bar, optional variants, stage, blue step plate caption, controls ending in \"Step n of N\".",
+      "**Do** move pointers as whole steps over 220ms with cubic-bezier(0.16, 1, 0.3, 1), and drop all motion under reduced motion.",
+      "**Do** keep prose in Source Serif 4 at 18px in a 66ch column on white."
+    ],
+    "donts": [
+      "**Don't** put serif prose on yellow; yellow carries board-face signage only.",
+      "**Don't** use green anywhere; success is ink in a double rule or the yellow band between heavy rules.",
+      "**Don't** use blue for decoration or emphasis; it marks position (indices, platforms, you-are-here, current step) and links and focus.",
+      "**Don't** use red for anything but failure and violated invariants.",
+      "**Don't** use coloured side stripes on notes or callouts; notes are bounded by full-width rules.",
+      "**Don't** add drop shadows, gradients or rounded cards; depth is rule weight.",
+      "**Don't** set uppercase outside the board title and plates.",
+      "**Don't** fall back to the category defaults the world refuses: a sidebar course tree (the contents rail lists only the current lesson's sections; the course lives on the map), an indigo accent, progress rings."
+    ]
+  }
+}

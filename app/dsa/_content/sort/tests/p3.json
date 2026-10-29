@@ -1,0 +1,8 @@
+[
+  {"name": "A few", "args": "([2, 4, 1, 3, 5],)", "expect": "3", "show": "a = [2, 4, 1, 3, 5]", "trace": [2, 4, 1, 3, 5], "why": "The pairs out of order are (2, 1), (4, 1) and (4, 3): 3 inversions. If you got more, check that you count only pairs i < j with a[i] > a[j]."},
+  {"name": "Sorted", "args": "([1, 2, 3, 4],)", "expect": "0", "show": "a = [1, 2, 3, 4]", "why": "A sorted list has no inversions: 0. If you got more, the count is added when the left value is taken, or on ties. Add len(left) - i only when a value is taken from the right list."},
+  {"name": "Reversed", "args": "([5, 4, 3, 2, 1],)", "expect": "10", "show": "a = [5, 4, 3, 2, 1]", "why": "Every pair is out of order: 5 × 4 / 2 = 10."},
+  {"name": "Equal values", "args": "([2, 2, 1],)", "expect": "2", "show": "a = [2, 2, 1]", "why": "Equal values are not out of order, so the answer is 2, not 3. In the merge, take from the left list on a tie (<=), so no inversion is counted for equal values."},
+  {"name": "Empty and one", "args": "()", "expect": "[0, 0]", "expr": "[count_inversions([]), count_inversions([7])]", "show": "[] and [7]", "why": "No pairs, no inversions: [0, 0]. If this failed with an error, the base case does not handle 0 or 1 values: return a count of 0 for them."},
+  {"name": "100,000 values", "args": "([(i * 7919) % 100_003 for i in range(100_000)],)", "expect": "2500038684", "timeout": 8000, "show": "100,000 values in mixed order", "why": "Checking every pair is 5 billion comparisons. Count while merge sorting: when you take right[j] before left[i], add len(left) - i, the number of left values still waiting."}
+]

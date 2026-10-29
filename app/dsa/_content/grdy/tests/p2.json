@@ -1,0 +1,12 @@
+[
+  {"name": "The example", "args": "([(3, 6), (2, 2), (1, 9), (4, 8)],)", "expect": "1", "show": "least_lateness([(3, 6), (2, 2), (1, 9), (4, 8)])", "why": "1: in deadline order (B, A, D, C) the jobs finish at 2, 5, 9 and 10, so D and C are each 1 late. The order given makes B 3 late."},
+  {"name": "All on time", "args": "([(2, 10), (3, 5), (1, 2)],)", "expect": "0", "show": "least_lateness([(2, 10), (3, 5), (1, 2)])", "why": "0: in deadline order they finish at 1, 4 and 6, all on time. A job that finishes early is late by 0, not by a negative amount."},
+  {"name": "No jobs", "args": "([],)", "expect": "0", "show": "least_lateness([])", "why": "0."},
+  {"name": "One late job", "args": "([(5, 3)],)", "expect": "2", "show": "least_lateness([(5, 3)])", "why": "2: it finishes at 5, due at 3."},
+  {"name": "Shortest first is wrong", "args": "([(1, 100), (10, 10)],)", "expect": "0", "show": "least_lateness([(1, 100), (10, 10)])", "why": "0: the long job is due first, so it goes first. Shortest first makes it 1 late."},
+  {"name": "Least slack first is wrong", "args": "([(1, 2), (10, 10)],)", "expect": "1", "show": "least_lateness([(1, 2), (10, 10)])", "why": "1: the short job first (due at 2), then the long one finishes at 11. Least slack first (deadline minus length) runs the long job first and makes the short one 9 late."},
+  {"name": "Same deadlines", "args": "([(2, 4), (2, 4), (2, 4)],)", "expect": "2", "show": "least_lateness([(2, 4), (2, 4), (2, 4)])", "why": "2: whatever the order, the last job finishes at 6, due at 4."},
+  {"name": "Deadline 0", "args": "([(1, 0), (2, 0), (3, 5)],)", "expect": "3", "show": "least_lateness([(1, 0), (2, 0), (3, 5)])", "why": "3: the two jobs due at 0 finish at 1 and 3, then the third finishes at 6, 1 late. The largest lateness is 3."},
+  {"name": "Nine jobs", "args": "([(4, 20), (1, 3), (6, 25), (2, 4), (3, 12), (5, 30), (2, 9), (7, 18), (1, 1)],)", "expect": "1", "show": "least_lateness([(4, 20), (1, 3), (6, 25), (2, 4), (3, 12), (5, 30), (2, 9), (7, 18), (1, 1)])", "why": "The checked answer comes from trying all 362,880 orders. Sort by deadline and walk once, keeping the finish time."},
+  {"name": "200,000 jobs", "args": "(list(zip([(k * 7919 + 13) % 20 + 1 for k in range(200000)], [(k * 104729 + 7) % 2100000 + 0 for k in range(200000)])),)", "expect": "1963", "timeout": 3000, "show": "200,000 jobs of length 1 to 20 with deadlines up to 2,100,000", "why": "Sort by deadline once: O(n log n). Finding the earliest remaining deadline with a scan each time is O(n²)."}
+]
